@@ -252,4 +252,24 @@ function scrollTo(id) {
     font-size: 0.7rem;
   }
 }
+
+@media (max-width: 375px) {
+  .hero-content {
+    padding: 32px 0;
+  }
+
+  .hero-proof {
+    padding: 16px 12px;
+    gap: 12px;
+  }
+
+  .proof-value {
+    font-size: 1.2rem;
+  }
+
+  .hero-badge {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+  }
+}
 </style>

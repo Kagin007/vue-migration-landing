@@ -148,4 +148,14 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 375px) {
+  .problem-card {
+    padding: 20px;
+  }
+
+  .problem-callout {
+    padding: 16px 20px;
+  }
+}
 </style>

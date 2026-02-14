@@ -197,4 +197,14 @@
     align-items: center;
   }
 }
+
+@media (max-width: 375px) {
+  .about-card {
+    padding: 24px 20px;
+  }
+
+  .tech-stack {
+    padding: 24px 16px;
+  }
+}
 </style>

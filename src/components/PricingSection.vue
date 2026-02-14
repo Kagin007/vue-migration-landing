@@ -222,4 +222,14 @@ const tiers = ref([
     min-height: unset;
   }
 }
+
+@media (max-width: 375px) {
+  .pricing-grid {
+    max-width: 100%;
+  }
+
+  .pricing-card {
+    padding: 24px 20px;
+  }
+}
 </style>

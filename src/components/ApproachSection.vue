@@ -254,4 +254,28 @@ const steps = [
     flex-direction: column;
   }
 }
+
+@media (max-width: 375px) {
+  .timeline-line {
+    left: 16px;
+  }
+
+  .step-marker {
+    width: 36px;
+    height: 36px;
+  }
+
+  .step-number {
+    font-size: 0.75rem;
+  }
+
+  .timeline-step {
+    gap: 12px;
+    padding-bottom: 28px;
+  }
+
+  .approach-highlight {
+    padding: 20px;
+  }
+}
 </style>

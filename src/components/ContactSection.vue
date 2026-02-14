@@ -296,4 +296,17 @@ async function handleSubmit() {
     justify-content: center;
   }
 }
+
+@media (max-width: 375px) {
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 10px 12px;
+    font-size: 16px;
+  }
+
+  .form-success {
+    padding: 32px 16px;
+  }
+}
 </style>
