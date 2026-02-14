@@ -1,5 +1,5 @@
 <template>
-  <section id="problem" class="section problem-section">
+  <section id="problem" class="section problem-section section-divider">
     <div class="container">
       <div class="reveal">
         <span class="section-label">// The Problem</span>
@@ -93,7 +93,7 @@
 
 .problem-card:hover {
   border-color: var(--accent-border);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-md), 0 0 20px rgba(66, 184, 131, 0.08);
   transform: translateY(-2px);
 }
 

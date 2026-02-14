@@ -62,7 +62,7 @@ const tiers = ref([
 </script>
 
 <template>
-  <section id="pricing" class="section pricing-section">
+  <section id="pricing" class="section pricing-section section-divider">
     <div class="container">
       <div class="reveal" style="text-align: center;">
         <span class="section-label">// Services & Pricing</span>
@@ -135,12 +135,12 @@ const tiers = ref([
 
 .pricing-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-lg), 0 0 20px rgba(66, 184, 131, 0.08);
 }
 
 .pricing-card.popular {
   border-color: var(--accent);
-  box-shadow: var(--shadow-lg), 0 0 0 1px var(--accent);
+  box-shadow: var(--shadow-lg), 0 0 0 1px var(--accent), 0 0 24px rgba(66, 184, 131, 0.1);
 }
 
 .popular-badge {

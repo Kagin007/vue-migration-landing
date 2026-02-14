@@ -40,7 +40,7 @@ async function handleSubmit() {
 </script>
 
 <template>
-  <section id="contact" class="section contact-section">
+  <section id="contact" class="section contact-section section-divider">
     <div class="container">
       <div class="reveal" style="text-align: center;">
         <span class="section-label">// Get in Touch</span>

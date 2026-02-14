@@ -32,7 +32,7 @@ function toggle(i) {
 </script>
 
 <template>
-  <section id="faq" class="section faq-section">
+  <section id="faq" class="section faq-section section-divider">
     <div class="container">
       <div class="reveal" style="text-align: center;">
         <span class="section-label">// FAQ</span>

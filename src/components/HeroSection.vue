@@ -110,6 +110,18 @@ function scrollTo(id) {
   height: 600px;
   background: radial-gradient(circle, rgba(66, 184, 131, 0.08) 0%, transparent 70%);
   border-radius: 50%;
+  animation: hero-breathe 8s ease-in-out infinite;
+}
+
+@keyframes hero-breathe {
+  0%, 100% { transform: translateX(-50%) scale(1); opacity: 1; }
+  50% { transform: translateX(-50%) scale(1.15); opacity: 0.7; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-glow {
+    animation: none;
+  }
 }
 
 .hero-content {
