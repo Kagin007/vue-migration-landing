@@ -23,7 +23,7 @@ function scrollTo(id) {
           <span class="footer-divider">|</span>
           <a href="https://www.linkedin.com/in/adam-schulte-a279ab10/">LinkedIn</a>
           <span class="footer-divider">|</span>
-          <a href="#github">GitHub</a>
+          <a href="https://github.com/Kagin007">GitHub</a>
         </div>
 
         <div class="footer-meta">
