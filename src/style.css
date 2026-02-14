@@ -260,6 +260,10 @@ code, .mono {
   .section {
     padding: 48px 0;
   }
+
+  .section-subtitle {
+    margin-bottom: 32px;
+  }
 }
 
 @media (max-width: 375px) {

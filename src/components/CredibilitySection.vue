@@ -100,7 +100,7 @@ import profilePic from '../assets/adam_profile_pic.jpeg'
 <style scoped>
 .credibility-layout {
   max-width: 720px;
-  margin: 0 auto 48px;
+  margin: 0 auto 32px;
 }
 
 .about-card {
@@ -200,6 +200,10 @@ import profilePic from '../assets/adam_profile_pic.jpeg'
 @media (max-width: 375px) {
   .about-card {
     padding: 24px 20px;
+  }
+
+  .credibility-layout {
+    margin-bottom: 20px;
   }
 
   .tech-stack {
