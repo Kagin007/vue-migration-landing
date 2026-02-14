@@ -205,5 +205,12 @@ import profilePic from '../assets/adam_profile_pic.jpeg'
   .tech-stack {
     padding: 24px 16px;
   }
+
+  .stack-item {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    width: 100%;
+    justify-content: center;
+  }
 }
 </style>

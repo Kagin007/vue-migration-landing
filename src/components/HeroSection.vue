@@ -240,8 +240,14 @@ function scrollTo(id) {
   }
 
   .hero-proof {
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
     padding: 20px 24px;
+  }
+
+  .proof-divider {
+    display: none;
   }
 
   .proof-value {
@@ -268,8 +274,13 @@ function scrollTo(id) {
   }
 
   .hero-badge {
-    font-size: 0.75rem;
-    padding: 6px 12px;
+    font-size: 0.72rem;
+    padding: 6px 10px;
+  }
+
+  .btn-lg {
+    padding: 14px 24px;
+    font-size: 0.9rem;
   }
 }
 </style>
