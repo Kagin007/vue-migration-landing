@@ -5,12 +5,12 @@ import profilePic from '../assets/adam_profile_pic.jpeg'
 <template>
   <section id="credibility" class="section">
     <div class="container">
-      <div class="reveal">
+      <div>
         <span class="section-label">// About & Proof</span>
         <h2 class="section-title">Built by someone who's<br><span class="text-gradient">done the work.</span></h2>
       </div>
 
-      <div class="about-card reveal reveal-delay-1">
+      <div class="about-card">
         <div class="about-avatar">
           <img :src="profilePic" alt="Adam Schulte" class="avatar-img" />
         </div>
@@ -43,7 +43,7 @@ import profilePic from '../assets/adam_profile_pic.jpeg'
         </div>
       </div>
 
-      <div class="tech-stack reveal">
+      <div class="tech-stack">
         <span class="stack-label mono">Migration Coverage</span>
         <div class="stack-items">
           <div class="stack-item">
