@@ -41,7 +41,7 @@
           <p>
             By combining deep Vue expertise with AI-assisted tooling, I deliver migrations
             at a pace that traditional consultancies can't match — without sacrificing code quality
-            or test coverage. The same methodology that completed a full production SaaS migration
+            or test coverage. The same methodology that completed a full 300+ file enterprise migration
             in two sprints.
           </p>
         </div>

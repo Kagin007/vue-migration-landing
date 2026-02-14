@@ -4,7 +4,7 @@ import { useDarkMode } from '../composables/useDarkMode'
 import { useActiveSection } from '../composables/useActiveSection'
 
 const { isDark, toggle: toggleTheme } = useDarkMode()
-const { activeSection } = useActiveSection(['hero', 'problem', 'approach', 'pricing', 'credibility', 'faq'])
+const { activeSection } = useActiveSection(['hero', 'problem', 'approach', 'pricing', 'credibility', 'faq', 'contact'])
 
 const scrolled = ref(false)
 const mobileOpen = ref(false)
@@ -15,6 +15,7 @@ const navLinks = [
   { id: 'pricing', label: 'Pricing' },
   { id: 'credibility', label: 'About' },
   { id: 'faq', label: 'FAQ' },
+  { id: 'contact', label: 'Contact' },
 ]
 
 function handleScroll() {

@@ -28,7 +28,7 @@ onMounted(() => {
       <p class="hero-subtitle">
         I migrate production Vue 2 applications to Vue 3 using a structured,
         AI-accelerated methodology — faster and with less risk than traditional consultancies.
-        40 tickets. Two sprints. Battle-tested on production SaaS.
+        40 tickets. Two sprints. Battle-tested on a 300+ file enterprise application.
       </p>
 
       <div class="hero-actions">
@@ -47,6 +47,11 @@ onMounted(() => {
       </div>
 
       <div class="hero-proof">
+        <div class="proof-item">
+          <span class="proof-value mono">300+</span>
+          <span class="proof-label">Files migrated</span>
+        </div>
+        <div class="proof-divider"></div>
         <div class="proof-item">
           <span class="proof-value mono">40</span>
           <span class="proof-label">Structured tickets</span>

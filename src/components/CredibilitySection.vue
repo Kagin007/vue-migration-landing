@@ -14,9 +14,9 @@
           <div class="about-content">
             <h3>Hi, I'm Adam.</h3>
             <p>
-              I'm a senior frontend developer who recently completed a full Vue 2 to Vue 3 migration
-              on a production SaaS application — including Options API to Composition API, Vuex to Pinia,
-              Vue CLI to Vite, and TypeScript adoption across the codebase.
+              I'm a fullstack developer who recently completed a full Vue 2 to Vue 3 migration
+              on a production enterprise application (300+ files) — Options API to Composition API, Vuex to Pinia,
+              Vue CLI to Vite, and TypeScript adoption across the entire codebase.
             </p>
             <p>
               I broke the work into 40 structured tickets and completed it in just two sprints using

@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: 'How is this different from hiring a consultancy?',
-    a: 'Traditional consultancies assign a rotating team of developers who need ramp-up time on your codebase, charge agency rates, and often follow generic playbooks. I\'m a single senior developer with direct, recent experience completing this exact migration. Lower overhead, faster execution, and you get the same person from audit through handoff.',
+    a: 'Traditional consultancies assign a rotating team of developers who need ramp-up time on your codebase, charge agency rates, and often follow generic playbooks. I\'m a single developer with direct, recent experience completing this exact migration. Lower overhead, faster execution, and you get the same person from audit through handoff.',
   },
 ]
 
