@@ -3,7 +3,7 @@
     <div class="container">
       <div class="reveal">
         <span class="section-label">// The Methodology</span>
-        <h2 class="section-title">Structured. Incremental.<br><span class="text-gradient">AI-accelerated.</span></h2>
+        <h2 class="section-title">Structured. Incremental.<br><span class="text-gradient">Battle-tested.</span></h2>
         <p class="section-subtitle">
           No big-bang rewrites. No guesswork. A proven four-phase process that
           keeps your application running while we modernize it underneath.
@@ -37,9 +37,9 @@
           </svg>
         </div>
         <div>
-          <h3>AI-Accelerated Execution</h3>
+          <h3>Speed Without Shortcuts</h3>
           <p>
-            By combining deep Vue expertise with AI-assisted tooling, I deliver migrations
+            Deep Vue expertise combined with a refined, repeatable process means I deliver migrations
             at a pace that traditional consultancies can't match — without sacrificing code quality
             or test coverage. The same methodology that completed a full 300+ file enterprise migration
             in two sprints.

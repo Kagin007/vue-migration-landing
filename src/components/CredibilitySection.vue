@@ -27,7 +27,7 @@ function scrollTo(id) {
           </p>
           <p>
             I broke the work into 40 structured tickets and completed it in just two sprints using
-            an AI-accelerated methodology I've refined through hands-on execution. Now I help other
+            a methodology I've refined through hands-on execution. Now I help other
             teams do the same — faster, cheaper, and with less risk than figuring it out alone.
           </p>
           <div class="about-links">

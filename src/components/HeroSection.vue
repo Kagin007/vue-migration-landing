@@ -31,8 +31,8 @@ function scrollTo(id) {
 
       <p class="hero-subtitle">
         I migrate production Vue 2 applications to Vue 3 using a structured,
-        AI-accelerated methodology — faster and with less risk than traditional consultancies.
-        40 tickets. Two sprints. Battle-tested on a 300+ file enterprise application.
+        battle-tested methodology — faster and with less risk than traditional consultancies.
+        40 tickets. Two sprints. Proven on a 300+ file enterprise application.
       </p>
 
       <div class="hero-actions">

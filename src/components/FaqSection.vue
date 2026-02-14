@@ -19,10 +19,6 @@ const faqs = [
     a: 'That\'s completely fine. Maybe you only need the Vuex-to-Pinia migration, or just the build tooling upgrade to Vite. The codebase audit will identify which pieces make sense to tackle and in what order. You can stop at any phase — each increment delivers standalone value.',
   },
   {
-    q: 'What does "AI-accelerated" actually mean?',
-    a: 'I use AI-assisted tooling to handle repetitive migration patterns — things like converting Options API components to Composition API, updating import patterns, and generating boilerplate. This dramatically speeds up the mechanical parts of the migration while I focus my expertise on the architectural decisions, edge cases, and testing strategy that require human judgment.',
-  },
-  {
     q: 'How is this different from hiring a consultancy?',
     a: 'Traditional consultancies assign a rotating team of developers who need ramp-up time on your codebase, charge agency rates, and often follow generic playbooks. I\'m a single developer with direct, recent experience completing this exact migration. Lower overhead, faster execution, and you get the same person from audit through handoff.',
   },
