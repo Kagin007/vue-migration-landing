@@ -40,41 +40,6 @@
           </div>
         </div>
 
-        <div class="testimonials-block">
-          <h3 class="reveal">What clients say</h3>
-
-          <div class="testimonial-card reveal reveal-delay-2">
-            <div class="testimonial-quote">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--accent)" opacity="0.3">
-                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-              </svg>
-              <p>"Placeholder testimonial — Adam's structured approach to our Vue 2 migration gave us confidence that the project would be delivered on time and without breaking changes. Highly recommended for any team facing this transition."</p>
-            </div>
-            <div class="testimonial-author">
-              <div class="author-avatar">JD</div>
-              <div>
-                <strong>Jane Doe</strong>
-                <span>CTO, Example SaaS Co.</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card reveal reveal-delay-3">
-            <div class="testimonial-quote">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--accent)" opacity="0.3">
-                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-              </svg>
-              <p>"Placeholder testimonial — The AI-accelerated methodology meant we were migrated in a fraction of the time we budgeted. The detailed ticket breakdown made it easy for our team to follow along and learn the new patterns."</p>
-            </div>
-            <div class="testimonial-author">
-              <div class="author-avatar">JS</div>
-              <div>
-                <strong>John Smith</strong>
-                <span>Engineering Manager, Tech Corp</span>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
       <div class="tech-stack reveal">
@@ -123,10 +88,8 @@
 
 <style scoped>
 .credibility-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  margin-bottom: 48px;
+  max-width: 720px;
+  margin: 0 auto 48px;
 }
 
 .about-card {
@@ -174,64 +137,6 @@
   font-size: 0.85rem;
 }
 
-.testimonials-block h3 {
-  font-size: 1rem;
-  color: var(--text-tertiary);
-  margin-bottom: 16px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.testimonial-card {
-  padding: 28px;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  margin-bottom: 16px;
-}
-
-.testimonial-quote {
-  margin-bottom: 20px;
-}
-
-.testimonial-quote svg {
-  margin-bottom: 8px;
-}
-
-.testimonial-quote p {
-  font-size: 0.93rem;
-  font-style: italic;
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.author-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--bg-tertiary);
-  color: var(--text-tertiary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  font-weight: 600;
-}
-
-.testimonial-author strong {
-  display: block;
-  font-size: 0.9rem;
-  color: var(--text-primary);
-}
-
-.testimonial-author span {
-  font-size: 0.8rem;
-  color: var(--text-tertiary);
-}
 
 .tech-stack {
   text-align: center;
@@ -280,10 +185,6 @@
 }
 
 @media (max-width: 768px) {
-  .credibility-layout {
-    grid-template-columns: 1fr;
-  }
-
   .stack-items {
     flex-direction: column;
     align-items: center;
