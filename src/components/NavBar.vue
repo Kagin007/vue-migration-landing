@@ -4,7 +4,7 @@ import { useDarkMode } from '../composables/useDarkMode'
 import { useActiveSection } from '../composables/useActiveSection'
 
 const { isDark, toggle: toggleTheme } = useDarkMode()
-const { activeSection } = useActiveSection(['hero', 'problem', 'approach', 'pricing', 'credibility', 'faq', 'contact'])
+const { activeSection } = useActiveSection(['hero', 'problem', 'approach', 'pricing', 'credibility', 'faq'])
 
 const scrolled = ref(false)
 const mobileOpen = ref(false)
@@ -15,7 +15,6 @@ const navLinks = [
   { id: 'pricing', label: 'Pricing' },
   { id: 'credibility', label: 'About' },
   { id: 'faq', label: 'FAQ' },
-  { id: 'contact', label: 'Contact' },
 ]
 
 function handleScroll() {
@@ -55,8 +54,8 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         >
           {{ link.label }}
         </a>
-        <a href="#footer-cta" class="btn btn-primary nav-cta" @click.prevent="scrollTo('footer-cta')">
-          Book a Call
+        <a href="#contact" class="btn btn-primary nav-cta" @click.prevent="scrollTo('contact')">
+          Contact
         </a>
       </nav>
 
