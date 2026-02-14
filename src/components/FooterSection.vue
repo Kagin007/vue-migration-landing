@@ -1,3 +1,9 @@
+<script setup>
+function scrollTo(id) {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+}
+</script>
+
 <template>
   <footer class="footer">
     <div class="container">
@@ -13,7 +19,7 @@
         </div>
 
         <div class="footer-links">
-          <a href="#contact">Contact</a>
+          <a href="#contact" @click.prevent="scrollTo('contact')">Contact</a>
           <span class="footer-divider">|</span>
           <a href="https://www.linkedin.com/in/adam-schulte-a279ab10/">LinkedIn</a>
           <span class="footer-divider">|</span>

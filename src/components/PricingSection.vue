@@ -1,6 +1,10 @@
 <script setup>
 import { ref } from 'vue'
 
+function scrollTo(id) {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+}
+
 const tiers = ref([
   {
     name: 'Migration Audit',
@@ -17,7 +21,7 @@ const tiers = ref([
       'Effort estimate and timeline projection',
       'Written report you can act on independently',
     ],
-    cta: 'Book an Audit',
+    cta: 'Get Started',
     ctaLink: '#contact',
   },
   {
@@ -34,7 +38,7 @@ const tiers = ref([
       'Testing strategy and implementation support',
       'Async Slack/email support between sessions',
     ],
-    cta: 'Get Started',
+    cta: 'Learn More',
     ctaLink: '#contact',
   },
   {
@@ -51,7 +55,7 @@ const tiers = ref([
       'Performance optimization',
       'Post-migration support period',
     ],
-    cta: 'Discuss Your Project',
+    cta: 'Get in Touch',
     ctaLink: '#contact',
   },
 ])
@@ -93,7 +97,7 @@ const tiers = ref([
             </li>
           </ul>
 
-          <a :href="tier.ctaLink" class="btn" :class="tier.popular ? 'btn-primary' : 'btn-secondary'" style="width: 100%; justify-content: center;">
+          <a :href="tier.ctaLink" class="btn" :class="tier.popular ? 'btn-primary' : 'btn-secondary'" style="width: 100%; justify-content: center;" @click.prevent="scrollTo('contact')">
             {{ tier.cta }}
           </a>
         </div>
@@ -101,7 +105,7 @@ const tiers = ref([
 
       <p class="pricing-note reveal">
         All pricing in Canadian dollars. Scope and final pricing confirmed after an initial discovery call.
-        Not sure which option fits? <a href="#contact">Let's talk</a> — no commitment required.
+        Not sure which option fits? <a href="#contact" @click.prevent="scrollTo('contact')">Let's talk</a> — no commitment required.
       </p>
     </div>
   </section>
