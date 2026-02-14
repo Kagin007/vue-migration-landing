@@ -13,6 +13,7 @@ const tiers = ref([
       'Component & dependency inventory',
       'Risk analysis and complexity scoring',
       'Detailed migration plan with ticket breakdown',
+      'Performance profiling and reactivity optimization',
       'Effort estimate and timeline projection',
       'Written report you can act on independently',
     ],
