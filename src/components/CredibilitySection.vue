@@ -10,40 +10,37 @@ import profilePic from '../assets/adam_profile_pic.jpeg'
         <h2 class="section-title">Built by someone who's<br><span class="text-gradient">done the work.</span></h2>
       </div>
 
-      <div class="credibility-layout">
-        <div class="about-card reveal reveal-delay-1">
-          <div class="about-avatar">
-            <img :src="profilePic" alt="Adam Schulte" class="avatar-img" />
-          </div>
-          <div class="about-content">
-            <h3>Hi, I'm Adam.</h3>
-            <p>
-              I'm a fullstack developer who recently completed a full Vue 2 to Vue 3 migration
-              on a production enterprise application (300+ files) — Options API to Composition API, Vuex to Pinia,
-              Vuetify 2 to Vuetify 3, Vue CLI to Vite, and TypeScript adoption across the entire codebase.
-            </p>
-            <p>
-              I broke the work into 40 structured tickets and completed it in just two sprints using
-              an AI-accelerated methodology I've refined through hands-on execution. Now I help other
-              teams do the same — faster, cheaper, and with less risk than figuring it out alone.
-            </p>
-            <div class="about-links">
-              <a href="https://www.linkedin.com/in/adam-schulte-a279ab10/" class="btn btn-secondary btn-sm">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-                LinkedIn
-              </a>
-              <a href="#contact" class="btn btn-secondary btn-sm">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
-                </svg>
-                Contact Me
-              </a>
-            </div>
+      <div class="about-card reveal reveal-delay-1">
+        <div class="about-avatar">
+          <img :src="profilePic" alt="Adam Schulte" class="avatar-img" />
+        </div>
+        <div class="about-content">
+          <h3>Hi, I'm Adam.</h3>
+          <p>
+            I'm a fullstack developer who recently completed a full Vue 2 to Vue 3 migration
+            on a production enterprise application (300+ files) — Options API to Composition API, Vuex to Pinia,
+            Vuetify 2 to Vuetify 3, Vue CLI to Vite, and TypeScript adoption across the entire codebase.
+          </p>
+          <p>
+            I broke the work into 40 structured tickets and completed it in just two sprints using
+            an AI-accelerated methodology I've refined through hands-on execution. Now I help other
+            teams do the same — faster, cheaper, and with less risk than figuring it out alone.
+          </p>
+          <div class="about-links">
+            <a href="https://www.linkedin.com/in/adam-schulte-a279ab10/" class="btn btn-secondary btn-sm">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+              LinkedIn
+            </a>
+            <a href="#contact" class="btn btn-secondary btn-sm">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+              </svg>
+              Contact Me
+            </a>
           </div>
         </div>
-
       </div>
 
       <div class="tech-stack reveal">
@@ -98,12 +95,9 @@ import profilePic from '../assets/adam_profile_pic.jpeg'
 </template>
 
 <style scoped>
-.credibility-layout {
+.about-card {
   max-width: 720px;
   margin: 0 auto 32px;
-}
-
-.about-card {
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -200,10 +194,6 @@ import profilePic from '../assets/adam_profile_pic.jpeg'
 @media (max-width: 375px) {
   .about-card {
     padding: 24px 20px;
-  }
-
-  .credibility-layout {
-    margin-bottom: 20px;
   }
 
   .tech-stack {
