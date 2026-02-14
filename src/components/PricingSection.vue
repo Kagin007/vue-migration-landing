@@ -45,7 +45,7 @@ const tiers = ref([
     features: [
       'Everything in the Guided Migration',
       'Full hands-on-keyboard execution',
-      'Vue 3, Pinia, Vite, and TypeScript migration',
+      'Vue 3, Vuetify 3, Pinia, Vite, and TypeScript migration',
       'Test suite updates and validation',
       'Performance optimization',
       'Post-migration support period',

@@ -80,6 +80,7 @@ const steps = [
     description: 'Methodical migration executed in small, reviewable increments. Your app stays deployable throughout the process.',
     details: [
       'Vue 3 + Composition API conversion',
+      'Vuetify 2 → Vuetify 3 component framework upgrade',
       'Vuex → Pinia state management migration',
       'Vue CLI → Vite build tooling upgrade',
       'TypeScript adoption and type safety improvements',
