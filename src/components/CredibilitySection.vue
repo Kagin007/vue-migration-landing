@@ -1,3 +1,7 @@
+<script setup>
+import profilePic from '../assets/adam_profile_pic.jpeg'
+</script>
+
 <template>
   <section id="credibility" class="section">
     <div class="container">
@@ -9,7 +13,7 @@
       <div class="credibility-layout">
         <div class="about-card reveal reveal-delay-1">
           <div class="about-avatar">
-            <div class="avatar-placeholder">AS</div>
+            <img :src="profilePic" alt="Adam Schulte" class="avatar-img" />
           </div>
           <div class="about-content">
             <h3>Hi, I'm Adam.</h3>
@@ -109,17 +113,12 @@
   border-radius: 20px;
 }
 
-.avatar-placeholder {
-  width: 64px;
-  height: 64px;
+.avatar-img {
+  width: 80px;
+  height: 80px;
   border-radius: 16px;
-  background: var(--gradient-accent);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 1.2rem;
+  object-fit: cover;
+  border: 2px solid var(--accent-border);
 }
 
 .about-content h3 {
