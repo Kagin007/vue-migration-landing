@@ -1,25 +1,6 @@
 <template>
   <footer class="footer">
     <div class="container">
-      <div id="footer-cta" class="footer-cta reveal">
-        <h2>Ready to leave Vue 2 behind?</h2>
-        <p>
-          Book a free intro call to discuss your application, timeline, and the best path forward.
-          No commitment, no sales pitch — just a technical conversation with someone who's done it.
-        </p>
-        <div class="footer-cta-actions">
-          <a href="#calendly" class="btn btn-primary btn-lg">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
-            </svg>
-            Book a Free Intro Call
-          </a>
-          <a href="mailto:hello@example.com" class="btn btn-ghost btn-lg">
-            Or email me directly
-          </a>
-        </div>
-      </div>
-
       <div class="footer-bottom">
         <div class="footer-brand">
           <svg class="vue-logo" viewBox="0 0 261.76 226.69" width="24" height="20">
@@ -32,9 +13,9 @@
         </div>
 
         <div class="footer-links">
-          <a href="mailto:hello@example.com">hello@example.com</a>
+          <a href="#contact">Contact</a>
           <span class="footer-divider">|</span>
-          <a href="#linkedin">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/adam-schulte-a279ab10/">LinkedIn</a>
           <span class="footer-divider">|</span>
           <a href="#github">GitHub</a>
         </div>
@@ -50,36 +31,8 @@
 
 <style scoped>
 .footer {
-  padding: 0 0 40px;
+  padding: 40px 0;
   background: var(--bg-primary);
-}
-
-.footer-cta {
-  text-align: center;
-  padding: 80px 40px;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  margin-bottom: 48px;
-}
-
-.footer-cta h2 {
-  font-size: clamp(1.75rem, 3vw, 2.25rem);
-  margin-bottom: 16px;
-}
-
-.footer-cta > p {
-  font-size: 1.05rem;
-  max-width: 560px;
-  margin: 0 auto 32px;
-}
-
-.footer-cta-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
 }
 
 .footer-bottom {
@@ -87,7 +40,6 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  padding-top: 8px;
 }
 
 .footer-brand {
@@ -128,20 +80,5 @@
 .footer-meta p {
   font-size: 0.8rem;
   color: var(--text-tertiary);
-}
-
-@media (max-width: 640px) {
-  .footer-cta {
-    padding: 48px 24px;
-  }
-
-  .footer-cta-actions {
-    flex-direction: column;
-  }
-
-  .footer-cta-actions .btn {
-    width: 100%;
-    justify-content: center;
-  }
 }
 </style>

@@ -43,12 +43,12 @@ function toggle(i) {
         <h2 class="section-title" style="margin-left: auto; margin-right: auto;">Common questions.<br><span class="text-gradient">Straight answers.</span></h2>
       </div>
 
-      <div class="faq-list">
+      <div class="faq-list reveal">
         <div
           v-for="(faq, i) in faqs"
           :key="i"
-          class="faq-item reveal"
-          :class="[`reveal-delay-${Math.min(i + 1, 5)}`, { open: openIndex === i }]"
+          class="faq-item"
+          :class="{ open: openIndex === i }"
         >
           <button class="faq-trigger" @click="toggle(i)" :aria-expanded="openIndex === i">
             <span>{{ faq.q }}</span>

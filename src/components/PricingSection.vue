@@ -17,7 +17,7 @@ const tiers = ref([
       'Written report you can act on independently',
     ],
     cta: 'Book an Audit',
-    ctaLink: '#calendly',
+    ctaLink: '#contact',
   },
   {
     name: 'Guided Migration',
@@ -34,7 +34,7 @@ const tiers = ref([
       'Async Slack/email support between sessions',
     ],
     cta: 'Get Started',
-    ctaLink: '#calendly',
+    ctaLink: '#contact',
   },
   {
     name: 'Full Migration',
@@ -51,7 +51,7 @@ const tiers = ref([
       'Post-migration support period',
     ],
     cta: 'Discuss Your Project',
-    ctaLink: '#calendly',
+    ctaLink: '#contact',
   },
 ])
 </script>
@@ -100,7 +100,7 @@ const tiers = ref([
 
       <p class="pricing-note reveal">
         All pricing in Canadian dollars. Scope and final pricing confirmed after an initial discovery call.
-        Not sure which option fits? <a href="#calendly">Let's talk</a> — no commitment required.
+        Not sure which option fits? <a href="#contact">Let's talk</a> — no commitment required.
       </p>
     </div>
   </section>
