@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 
-const WEBHOOK_URL = 'https://hooks.example.com/migration-assessment'
+const WEBHOOK_URL = 'https://formspree.io/f/mgolkkvg'
 
 /**
  * Fire-and-forget submission of assessment data to a webhook.
@@ -15,7 +15,7 @@ export function useAssessmentSubmit() {
     try {
       await fetch(WEBHOOK_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           answers,
           contact: contactInfo,
