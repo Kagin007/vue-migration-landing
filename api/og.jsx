@@ -1,9 +1,5 @@
 import { ImageResponse } from '@vercel/og';
 
-export const config = {
-  runtime: 'edge',
-};
-
 export default async function handler() {
   const interBold = await fetch(
     'https://fonts.gstatic.com/s/inter/v18/UcCo3FwrK3iLTcviYwY.ttf',
