@@ -3,6 +3,7 @@ import NavBar from './components/NavBar.vue'
 import HeroSection from './components/HeroSection.vue'
 import ProblemSection from './components/ProblemSection.vue'
 import ApproachSection from './components/ApproachSection.vue'
+import AssessmentSection from './components/AssessmentSection.vue'
 import PricingSection from './components/PricingSection.vue'
 import CredibilitySection from './components/CredibilitySection.vue'
 import FaqSection from './components/FaqSection.vue'
@@ -19,6 +20,7 @@ useScrollReveal()
     <HeroSection />
     <ProblemSection />
     <ApproachSection />
+    <AssessmentSection />
     <PricingSection />
     <CredibilitySection />
     <FaqSection />
