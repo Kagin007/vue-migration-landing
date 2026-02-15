@@ -9,7 +9,7 @@ function scrollTo(id) {
     <div class="container">
       <div class="footer-bottom">
         <div class="footer-brand">
-          <svg class="vue-logo" viewBox="0 0 261.76 226.69" width="24" height="20">
+          <svg class="vue-logo" viewBox="0 0 261.76 226.69" width="24" height="20" aria-hidden="true">
             <g transform="matrix(1.3333 0 0 -1.3333 -76.311 313.34)">
               <path d="m178.04 235.01-22.056-38.208-22.056 38.208h-40.836l62.892-108.96 62.892 108.96z" fill="#42b883"/>
               <path d="m178.04 235.01-22.056-38.208-22.056 38.208h-15.832l37.888-65.64 37.888 65.64z" fill="var(--accent-secondary)"/>

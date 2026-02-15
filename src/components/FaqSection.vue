@@ -48,7 +48,7 @@ function toggle(i) {
         >
           <button class="faq-trigger" @click="toggle(i)" :aria-expanded="openIndex === i">
             <span>{{ faq.q }}</span>
-            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <polyline points="6 9 12 15 18 9"/>
             </svg>
           </button>
