@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Allow: /api/og
 
 Sitemap: https://www.vuemigration.dev/sitemap.xml
