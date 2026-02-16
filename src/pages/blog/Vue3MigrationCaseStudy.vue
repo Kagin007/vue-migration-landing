@@ -128,15 +128,7 @@ useHead({
             The order matters more than most teams realize. Migrating in the wrong sequence creates merge conflicts, blocks parallel work, and forces you to redo things. Here's the sequence I followed:
           </p>
 
-          <h3>Phase 1: Build Tooling (Vue CLI to Vite)</h3>
-          <p>
-            I started with the build tooling because it's independent of the Vue version. Moving from Vue CLI + Webpack to Vite gave the team an immediate developer experience improvement — dev server startup dropped from tens of seconds to under a second. Hot module replacement became near-instant.
-          </p>
-          <p>
-            This phase also uncovered environment variable patterns, proxy configurations, and build-time assumptions that would have been harder to debug if mixed in with the framework migration.
-          </p>
-
-          <h3>Phase 2: Vue 2 to Vue 3</h3>
+          <h3>Phase 1: Vue 2 to Vue 3</h3>
           <p>
             Because there's no bridge version between Vuetify 2 and Vuetify 3, an incremental migration using <code>@vue/compat</code> wasn't an option. The entire migration had to be done in one big shot — Vue 3 and Vuetify 3 needed to land together. That meant all the work happened on a long-running branch, validated thoroughly before merging.
           </p>
@@ -144,7 +136,7 @@ useHead({
             Since the team had already converted to the Composition API, this phase focused on upgrading the core framework to Vue 3 and addressing the <router-link to="/blog/vue-2-to-vue-3-gotchas">subtle breaking changes</router-link> — renamed lifecycle hooks, changed v-model behavior, removed APIs like <code>$listeners</code> and <code>$children</code>, and updated third-party dependencies to their Vue 3 compatible versions.
           </p>
 
-          <h3>Phase 3: Vuetify 2 to Vuetify 3</h3>
+          <h3>Phase 2: Vuetify 2 to Vuetify 3</h3>
           <p>
             This was the most time-consuming phase. <router-link to="/blog/vuetify-2-to-vuetify-3-migration">Vuetify 3 is effectively a rewrite</router-link> — the grid system, component prop APIs, theming system, and activator patterns all changed. I worked through it component type by component type: all buttons first, then all form inputs, then dialogs and menus, then data tables last (since they required the most individual attention).
           </p>
@@ -152,12 +144,20 @@ useHead({
             Data tables with server-side pagination, custom slots, and inline editing took the longest per instance. I budgeted extra time for these and tested each one individually.
           </p>
 
-          <h3>Phase 4: <router-link to="/blog/vuex-to-pinia-migration">Vuex to Pinia</router-link></h3>
+          <h3>Phase 3: <router-link to="/blog/vuex-to-pinia-migration">Vuex to Pinia</router-link></h3>
           <p>
-            I saved state management for last because the Vuex stores were still functional, so there was no urgency to migrate them early. Each Vuex module became a Pinia store. Mutations were eliminated — in Pinia, you modify state directly in actions. Namespaced module access patterns were replaced with direct store imports.
+            With the framework and UI library updated, I moved on to state management. Each Vuex module became a Pinia store. Mutations were eliminated — in Pinia, you modify state directly in actions. Namespaced module access patterns were replaced with direct store imports.
           </p>
           <p>
             I migrated one store module at a time, updating every component that consumed it before moving to the next module. This kept the blast radius small — at any point, the application was fully functional with some stores on Vuex and others on Pinia. Pinia's built-in TypeScript support also improved type safety across the stores, tightening up types that had been looser under Vuex.
+          </p>
+
+          <h3>Phase 4: Build Tooling (Vue CLI to Vite)</h3>
+          <p>
+            We saved the build tooling migration for last. Moving from Vue CLI + Webpack to Vite gave the team an immediate developer experience improvement — dev server startup dropped from tens of seconds to under a second. This phase also uncovered environment variable patterns, proxy configurations, and build-time assumptions that were easier to isolate with the framework migration already behind us.
+          </p>
+          <p>
+            In hindsight, I'd move this phase to the beginning next time. The faster feedback loop from Vite would have made the rest of the migration more pleasant. It's independent of the Vue version, so there's no reason it can't go first.
           </p>
 
           <h2>What Went Wrong</h2>
@@ -211,7 +211,7 @@ useHead({
           </p>
           <ul>
             <li><strong>Estimate data tables individually</strong> — I grouped all data table migrations into a few tickets. In reality, each complex table is its own mini-project. Individual tickets would have given more accurate timelines and better progress visibility.</li>
-            <li><strong>Audit third-party dependencies earlier</strong> — I checked compatibility during the audit phase but didn't actually install and test the Vue 3 versions until I needed them. Testing them upfront would have surfaced the forking and beta-version work earlier in the timeline.</li>
+            <li><strong>Migrate build tooling first</strong> — We did Vue CLI to Vite last, but the faster dev server and near-instant HMR would have made every other phase more productive. Since the build tooling migration is independent of the Vue version, there's no reason not to do it first.</li>
           </ul>
 
           <h2>Key Takeaways</h2>
@@ -220,7 +220,7 @@ useHead({
           </p>
           <ul>
             <li><strong>Audit before you code.</strong> The week spent mapping the codebase paid for itself many times over. Every ticket was scoped before the first line of migration code was written. No surprises, no scope creep.</li>
-            <li><strong>Migrate in phases, not all at once.</strong> Composition API conversion → build tooling → framework → UI framework → state management. Even when you can't ship incrementally, structuring the work in phases keeps it manageable.</li>
+            <li><strong>Migrate in phases, not all at once.</strong> Composition API conversion → framework → UI framework → state management → build tooling. Even when you can't ship incrementally, structuring the work in phases keeps it manageable. (Though next time, I'd move build tooling to the front.)</li>
             <li><strong>Vuetify means big-bang.</strong> There's no bridge between Vuetify 2 and Vuetify 3, so <code>@vue/compat</code> doesn't help. Plan for a long-running branch and a dedicated validation sprint before merging.</li>
             <li><strong>Vuetify is the hardest part.</strong> If your app uses Vuetify, plan for the component framework migration to take more time than the Vue framework migration itself.</li>
             <li><strong>Validate before you merge.</strong> We paused pushes to main for a sprint to validate the migration end-to-end. That dedicated validation time caught issues that would have been harder to debug in production.</li>
