@@ -19,6 +19,10 @@ const routes = [
     path: '/blog/vuetify-2-to-vuetify-3-migration',
     component: () => import('../pages/blog/Vuetify2ToVuetify3.vue'),
   },
+  {
+    path: '/blog/vue-2-to-vue-3-migration-case-study',
+    component: () => import('../pages/blog/Vue3MigrationCaseStudy.vue'),
+  },
 ]
 
 export { routes }

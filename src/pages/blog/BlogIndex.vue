@@ -23,6 +23,13 @@ useHead({
 
 const posts = [
   {
+    title: 'Case Study: Migrating a 300+ File Enterprise App from Vue 2 to Vue 3',
+    description: 'How I migrated a production enterprise application from Vue 2 to Vue 3 in two sprints — 300+ files, 40 tickets, zero downtime. The full breakdown of phases, decisions, and results.',
+    path: '/blog/vue-2-to-vue-3-migration-case-study',
+    date: 'February 16, 2026',
+    datetime: '2026-02-16',
+  },
+  {
     title: 'Vuetify 2 to Vuetify 3 Migration: The Hardest Part of Your Vue 3 Upgrade',
     description: 'Vuetify 3 is a near-complete rewrite. Grid system, component APIs, theming, SASS variables — almost everything changed. A practical guide based on a 300+ file production migration.',
     path: '/blog/vuetify-2-to-vuetify-3-migration',
