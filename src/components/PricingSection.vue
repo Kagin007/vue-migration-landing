@@ -25,32 +25,16 @@ const tiers = ref([
     ctaLink: '#contact',
   },
   {
-    name: 'Guided Migration',
-    price: '$150 – $250',
-    unit: 'CAD / hour',
-    description: 'Your team does the work — I provide the expertise, code reviews, and architecture guidance to keep them on track.',
-    popular: true,
-    features: [
-      'Everything in the Migration Audit',
-      'Hands-on architecture guidance',
-      'Code reviews on migration PRs',
-      'Pair programming sessions as needed',
-      'Testing strategy and implementation support',
-      'Async Slack/email support between sessions',
-    ],
-    cta: 'Learn More',
-    ctaLink: '#contact',
-  },
-  {
     name: 'Full Migration',
     price: '$5,000 – $50,000',
     unit: 'CAD, project-based',
     description: 'End-to-end execution. I handle the migration from audit through production deployment so your team can stay focused on shipping features.',
-    popular: false,
+    popular: true,
     features: [
-      'Everything in the Guided Migration',
+      'Everything in the Migration Audit',
       'Full hands-on-keyboard execution',
       'Vue 3, Vuetify 3, Pinia, Vite, and TypeScript migration',
+      'Code reviews and PR-based workflow',
       'Test suite updates and validation',
       'Performance optimization',
       'Post-migration support period',
@@ -68,7 +52,7 @@ const tiers = ref([
         <span class="section-label">// Services & Pricing</span>
         <h2 id="pricing-heading" class="section-title" style="margin-left: auto; margin-right: auto;">Vue Migration Services & Pricing.<br><span class="text-gradient">Right-sized for your team.</span></h2>
         <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">
-          Whether you need a roadmap, a guide, or someone to do the heavy lifting — there's an option that fits.
+          Start with an audit to scope the work, or go straight to a full migration — either way, you get the same developer from start to finish.
         </p>
       </div>
 
@@ -105,7 +89,7 @@ const tiers = ref([
 
       <p class="pricing-note reveal">
         All pricing in Canadian dollars. Scope and final pricing confirmed after an initial discovery call.
-        Not sure which option fits? <a href="#contact" @click.prevent="scrollTo('contact')">Let's talk</a> — no commitment required.
+        Not sure where to start? <a href="#contact" @click.prevent="scrollTo('contact')">Let's talk</a> — no commitment required.
       </p>
     </div>
   </section>
@@ -118,7 +102,7 @@ const tiers = ref([
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   margin-bottom: 32px;
   align-items: start;

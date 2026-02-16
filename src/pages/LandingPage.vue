@@ -15,12 +15,12 @@ useScrollReveal()
 useHead({
   title: 'Vue 2 to Vue 3 Migration Services | Hire a Migration Expert',
   meta: [
-    { name: 'description', content: 'Hire an experienced Vue migration developer for your Vue 2 to Vue 3 migration. Migration Audit, Guided Migration, or Full Migration — proven on a 300+ file enterprise application.' },
+    { name: 'description', content: 'Hire an experienced Vue migration developer for your Vue 2 to Vue 3 migration. Migration Audit or Full Migration — proven on a 300+ file enterprise application.' },
     { name: 'author', content: 'Adam Schulte' },
     { property: 'og:type', content: 'website' },
     { property: 'og:url', content: 'https://www.vuemigration.dev/' },
     { property: 'og:title', content: 'Vue 2 to Vue 3 Migration Services | Hire a Migration Expert' },
-    { property: 'og:description', content: 'Hire an experienced Vue migration developer for your Vue 2 to Vue 3 migration. Migration Audit, Guided Migration, or Full Migration — proven on a 300+ file enterprise application.' },
+    { property: 'og:description', content: 'Hire an experienced Vue migration developer for your Vue 2 to Vue 3 migration. Migration Audit or Full Migration — proven on a 300+ file enterprise application.' },
     { property: 'og:image', content: 'https://www.vuemigration.dev/og-image.png' },
     { property: 'og:image:width', content: '1200' },
     { property: 'og:image:height', content: '630' },
@@ -28,7 +28,7 @@ useHead({
     { property: 'og:site_name', content: 'Vue Migration Consulting' },
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:title', content: 'Vue 2 to Vue 3 Migration Services | Hire a Migration Expert' },
-    { name: 'twitter:description', content: 'Hire an experienced Vue migration developer for your Vue 2 to Vue 3 migration. Migration Audit, Guided Migration, or Full Migration — proven on a 300+ file enterprise application.' },
+    { name: 'twitter:description', content: 'Hire an experienced Vue migration developer for your Vue 2 to Vue 3 migration. Migration Audit or Full Migration — proven on a 300+ file enterprise application.' },
     { name: 'twitter:image', content: 'https://www.vuemigration.dev/og-image.png' },
   ],
   link: [
@@ -63,13 +63,6 @@ useHead({
               "description": "Full codebase assessment with detailed migration plan and ticket breakdown.",
               "priceCurrency": "CAD",
               "price": "1000-1500"
-            },
-            {
-              "@type": "Offer",
-              "name": "Vue Guided Migration",
-              "description": "Architecture guidance, code reviews, and pair programming to keep your team on track.",
-              "priceCurrency": "CAD",
-              "price": "150-250"
             },
             {
               "@type": "Offer",
@@ -109,7 +102,7 @@ useHead({
             "name": "Do you work with our existing development team?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Absolutely. In the Guided Migration model, I work directly alongside your team through code reviews, pair programming, and architecture guidance. For the Full Migration model, I integrate with your existing PR workflow so your team has full visibility and can review every change."
+              "text": "Absolutely. I integrate with your existing PR workflow so your team has full visibility and can review every change. I handle the migration execution while your developers stay focused on shipping features."
             }
           },
           {

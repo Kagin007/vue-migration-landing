@@ -121,7 +121,7 @@ export function useAssessmentScoring(answers) {
   /** Recommended approach text based on tier */
   const recommendedApproach = computed(() => ({
     straightforward:
-      'Your codebase is well-positioned for a smooth migration. A guided migration with consulting support should be sufficient — your team can handle the execution with expert code reviews and architecture guidance along the way.',
+      'Your codebase is well-positioned for a smooth migration. A codebase audit will give you a clear roadmap, and the migration itself should be fast and straightforward.',
     moderate:
       'Your migration has some moving parts that need careful planning. Starting with a codebase audit will give you a clear picture of the work involved, then you can decide whether to run the migration in-house with guidance or bring in hands-on help for the trickier pieces.',
     complex:

@@ -118,7 +118,7 @@ async function handleSubmit() {
               id="message"
               v-model="form.message"
               rows="5"
-              placeholder="Tell me about your application and what you're looking for — migration audit, guided migration, full migration, or just have questions?"
+              placeholder="Tell me about your application and what you're looking for — migration audit, full migration, or just have questions?"
               required
             ></textarea>
           </div>

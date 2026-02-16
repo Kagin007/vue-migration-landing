@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     q: 'Do you work with our existing development team?',
-    a: 'Absolutely. In the Guided Migration model, I work directly alongside your team through code reviews, pair programming, and architecture guidance. For the Full Migration model, I integrate with your existing PR workflow so your team has full visibility and can review every change.',
+    a: 'Absolutely. I integrate with your existing PR workflow so your team has full visibility and can review every change. I handle the migration execution while your developers stay focused on shipping features.',
   },
   {
     q: 'What if we only need a partial Vue migration?',
