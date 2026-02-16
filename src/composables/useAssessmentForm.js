@@ -8,14 +8,10 @@ import { questions } from '../data/assessmentQuestions.js'
 export function useAssessmentForm() {
   const currentStep = ref(0)
   const answers = ref({})
-  const contactInfo = ref({ email: '', name: '', company: '' })
   const formStatus = ref('in-progress') // 'in-progress' | 'completed'
 
   const totalSteps = questions.length
   const currentQuestion = computed(() => questions[currentStep.value])
-
-  // Simple email regex — catches obvious typos without being overly strict
-  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
   const canAdvance = computed(() => {
     const q = currentQuestion.value
@@ -30,16 +26,11 @@ export function useAssessmentForm() {
       return Array.isArray(selected) && selected.length > 0
     }
 
-    if (q.type === 'contact') {
-      return EMAIL_RE.test(contactInfo.value.email.trim())
-    }
-
     return false
   })
 
   const isComplete = computed(() => {
     return questions.every((q) => {
-      if (q.type === 'contact') return EMAIL_RE.test(contactInfo.value.email.trim())
       if (q.type === 'checkbox') {
         const val = answers.value[q.id]
         return Array.isArray(val) && val.length > 0
@@ -90,14 +81,12 @@ export function useAssessmentForm() {
   function reset() {
     currentStep.value = 0
     answers.value = {}
-    contactInfo.value = { email: '', name: '', company: '' }
     formStatus.value = 'in-progress'
   }
 
   return {
     currentStep,
     answers,
-    contactInfo,
     formStatus,
     totalSteps,
     currentQuestion,

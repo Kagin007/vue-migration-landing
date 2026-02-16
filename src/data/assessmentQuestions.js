@@ -4,8 +4,8 @@
  * Each question has:
  *   id        — unique key used to store the answer
  *   question  — display text
- *   type      — 'radio' | 'checkbox' | 'contact'
- *   options   — array of { label, value, score } (omitted for contact)
+ *   type      — 'radio' | 'checkbox'
+ *   options   — array of { label, value, score }
  *   category  — which sub-score this contributes to
  *   riskText  — map of answer value → risk description shown in results
  *
@@ -162,14 +162,6 @@ export const questions = [
       { label: 'Next 6 months', value: '6_months', score: 0 },
       { label: 'Just exploring', value: 'exploring', score: 0 },
     ],
-    riskText: {},
-  },
-  {
-    id: 'contact',
-    question: 'Where should we send your results?',
-    type: 'contact',
-    category: 'none',
-    options: [],
     riskText: {},
   },
 ]

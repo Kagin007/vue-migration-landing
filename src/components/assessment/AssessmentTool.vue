@@ -1,5 +1,4 @@
 <script setup>
-import { watch } from 'vue'
 import { useAssessmentForm } from '../../composables/useAssessmentForm.js'
 import { useAssessmentScoring } from '../../composables/useAssessmentScoring.js'
 import { useAssessmentSubmit } from '../../composables/useAssessmentSubmit.js'
@@ -7,13 +6,11 @@ import ProgressBar from './ProgressBar.vue'
 import AssessmentStep from './AssessmentStep.vue'
 import QuestionRadio from './QuestionRadio.vue'
 import QuestionCheckbox from './QuestionCheckbox.vue'
-import ContactForm from './ContactForm.vue'
 import AssessmentResults from './AssessmentResults.vue'
 
 const {
   currentStep,
   answers,
-  contactInfo,
   formStatus,
   totalSteps,
   currentQuestion,
@@ -38,24 +35,7 @@ const {
   recommendedApproach,
 } = useAssessmentScoring(answers)
 
-const { submit } = useAssessmentSubmit()
-
-// Fire-and-forget submit when assessment is completed
-watch(formStatus, (status) => {
-  if (status === 'completed') {
-    submit({
-      answers: answers.value,
-      contactInfo: contactInfo.value,
-      scores: {
-        totalScore: totalScore.value,
-        tier: tier.value,
-        tierLabel: tierLabel.value,
-        timelineEstimate: timelineEstimate.value,
-        categoryScores: categoryScores.value,
-      },
-    })
-  }
-})
+const { submit, submitStatus } = useAssessmentSubmit()
 
 function handleKeydown(e) {
   if (e.key === 'Enter' && canAdvance.value) {
@@ -71,12 +51,16 @@ function handleKeydown(e) {
       <AssessmentResults
         :totalScore="totalScore"
         :maxPossibleScore="maxPossibleScore"
+        :tier="tier"
         :tierLabel="tierLabel"
         :tierColor="tierColor"
         :categoryScores="categoryScores"
         :riskAreas="riskAreas"
         :timelineEstimate="timelineEstimate"
         :recommendedApproach="recommendedApproach"
+        :answers="answers"
+        :submit="submit"
+        :submitStatus="submitStatus"
         @reset="reset"
       />
     </template>
@@ -105,13 +89,6 @@ function handleKeydown(e) {
             :options="currentQuestion.options"
             :modelValue="answers[currentQuestion.id] || []"
             @toggle="toggleCheckbox(currentQuestion.id, $event)"
-          />
-
-          <!-- Contact form -->
-          <ContactForm
-            v-if="currentQuestion.type === 'contact'"
-            :modelValue="contactInfo"
-            @update:modelValue="contactInfo = $event"
           />
         </AssessmentStep>
       </Transition>
