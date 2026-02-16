@@ -1,6 +1,15 @@
 <script setup>
+import { useRouter, useRoute } from 'vue-router'
+
+const router = useRouter()
+const route = useRoute()
+
 function scrollTo(id) {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+  if (route.path === '/') {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+  } else {
+    router.push({ path: '/', hash: `#${id}` })
+  }
 }
 </script>
 

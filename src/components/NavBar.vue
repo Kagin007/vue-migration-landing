@@ -1,7 +1,11 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 import { useDarkMode } from '../composables/useDarkMode'
 import { useActiveSection } from '../composables/useActiveSection'
+
+const router = useRouter()
+const route = useRoute()
 
 const { isDark, toggle: toggleTheme } = useDarkMode()
 const { activeSection } = useActiveSection(['hero', 'problem', 'approach', 'assessment', 'pricing', 'credibility', 'faq'])
@@ -24,7 +28,11 @@ function handleScroll() {
 
 function scrollTo(id) {
   mobileOpen.value = false
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+  if (route.path === '/') {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+  } else {
+    router.push({ path: '/', hash: `#${id}` })
+  }
 }
 
 onMounted(() => window.addEventListener('scroll', handleScroll, { passive: true }))
@@ -34,7 +42,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 <template>
   <header class="navbar" :class="{ scrolled, 'mobile-open': mobileOpen }">
     <div class="container navbar-inner">
-      <a href="#hero" class="navbar-brand" @click.prevent="scrollTo('hero')">
+      <router-link to="/" class="navbar-brand">
         <svg class="vue-logo" viewBox="0 0 261.76 226.69" width="28" height="24" aria-hidden="true">
           <g transform="matrix(1.3333 0 0 -1.3333 -76.311 313.34)">
             <path d="m178.04 235.01-22.056-38.208-22.056 38.208h-40.836l62.892-108.96 62.892 108.96z" fill="#42b883"/>
@@ -42,7 +50,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
           </g>
         </svg>
         <span class="brand-text">Vue Migration<span class="brand-dot">.</span></span>
-      </a>
+      </router-link>
 
       <nav class="navbar-nav" :class="{ open: mobileOpen }">
         <a
@@ -55,6 +63,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         >
           {{ link.label }}
         </a>
+        <router-link to="/blog/vue-2-end-of-life" class="nav-link">Blog</router-link>
         <a href="#contact" class="btn btn-primary nav-cta" @click.prevent="scrollTo('contact')">
           Contact
         </a>
