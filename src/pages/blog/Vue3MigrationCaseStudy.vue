@@ -9,7 +9,7 @@ function scrollTo(id) {
 }
 
 const title = 'Case Study: Migrating a 300+ File Enterprise App from Vue 2 to Vue 3'
-const description = 'How I migrated a production enterprise application from Vue 2 to Vue 3 in two sprints — 300+ files, 40 tickets, zero downtime. The full breakdown of phases, decisions, and results.'
+const description = 'How I migrated a production enterprise application from Vue 2 to Vue 3 in two sprints — 300+ files, 40 tickets, one sprint of validation. The full breakdown of phases, decisions, and results.'
 const url = 'https://www.vuemigration.dev/blog/vue-2-to-vue-3-migration-case-study'
 
 useHead({
@@ -83,7 +83,7 @@ useHead({
 
         <section class="blog-content">
           <p class="lead">
-            I led the full Vue 2 to Vue 3 migration of a production enterprise application — 300+ files, touching every layer of the stack. Options API to Composition API. Vuex to Pinia. Vuetify 2 to Vuetify 3. Vue CLI to Vite. JavaScript to TypeScript. The entire migration was broken into 40 structured tickets and completed in two sprints with zero production downtime.
+            I led the full Vue 2 to Vue 3 migration of a production enterprise application — 300+ files, touching every layer of the stack. Vue CLI to Vite. Options API to Composition API. Vuetify 2 to Vuetify 3. Vuex to Pinia. The entire migration was broken into 40 structured tickets and completed in two sprints, with a dedicated validation sprint before merging to main.
           </p>
           <p>
             This is the full breakdown of how it happened: what the codebase looked like before, how I planned the work, the order of execution, what went wrong, and the measurable results.
@@ -98,7 +98,7 @@ useHead({
             <li><strong>Vuex</strong> for state management with namespaced modules</li>
             <li><strong>Vuetify 2</strong> as the component framework — heavily used across nearly every view</li>
             <li><strong>Vue CLI + Webpack</strong> for build tooling</li>
-            <li><strong>JavaScript</strong> throughout — no TypeScript</li>
+            <li><strong>TypeScript</strong> already in use across the codebase</li>
             <li><strong>300+ files</strong> including components, views, stores, composables, and utilities</li>
           </ul>
           <p>
@@ -144,23 +144,15 @@ useHead({
             With compat mode enabled, the application still worked. Every Vue 2 pattern — Options API, filters, <code>$listeners</code>, <code>$on</code>/<code>$off</code> — continued to function but logged warnings. This gave me a live checklist of everything that needed to change, in priority order.
           </p>
 
-          <h3>Phase 3: Vuex to Pinia</h3>
+          <h3>Phase 3: Component Migration (Options API to Composition API)</h3>
           <p>
-            I migrated state management before touching components because store changes ripple through the entire application. Each Vuex module became a Pinia store. Mutations were eliminated — in Pinia, you modify state directly in actions. Namespaced module access patterns were replaced with direct store imports.
-          </p>
-          <p>
-            I migrated one store module at a time, updating every component that consumed it before moving to the next module. This kept the blast radius small — at any point, the application was fully functional with some stores on Vuex and others on Pinia.
-          </p>
-
-          <h3>Phase 4: Component Migration (Options API to Composition API)</h3>
-          <p>
-            With stores migrated, I converted components from the Options API to the Composition API with <code>&lt;script setup&gt;</code>. This phase had the highest ticket count because it touched every component.
+            I converted components from the Options API to the Composition API with <code>&lt;script setup&gt;</code> early in the migration because it touched every file and unlocked the rest of the work. This phase had the highest ticket count.
           </p>
           <p>
             Mixins were the hardest part. Each mixin had to be refactored into a composable, and every component that used that mixin needed to be updated to import the composable instead. Some mixins had naming conflicts with component-local data, which only surfaced at runtime. I handled these by converting the most-used mixins first, then working through the long tail.
           </p>
 
-          <h3>Phase 5: Vuetify 2 to Vuetify 3</h3>
+          <h3>Phase 4: Vuetify 2 to Vuetify 3</h3>
           <p>
             This was the most time-consuming phase. Vuetify 3 is effectively a rewrite — the grid system, component prop APIs, theming system, and activator patterns all changed. I worked through it component type by component type: all buttons first, then all form inputs, then dialogs and menus, then data tables last (since they required the most individual attention).
           </p>
@@ -168,12 +160,15 @@ useHead({
             Data tables with server-side pagination, custom slots, and inline editing took the longest per instance. I budgeted extra time for these and tested each one individually.
           </p>
 
-          <h3>Phase 6: TypeScript Adoption</h3>
+          <h3>Phase 5: Vuex to Pinia</h3>
           <p>
-            With the codebase on Vue 3 and Composition API, TypeScript adoption was straightforward. Vue 3's <code>&lt;script setup lang="ts"&gt;</code> provides excellent type inference for props, emits, and template refs. I added TypeScript incrementally — converting files as I touched them rather than doing a big-bang conversion.
+            I saved state management for last because the Vuex stores were stable and functional under the compat build, so there was no urgency to migrate them early. Each Vuex module became a Pinia store. Mutations were eliminated — in Pinia, you modify state directly in actions. Namespaced module access patterns were replaced with direct store imports.
+          </p>
+          <p>
+            I migrated one store module at a time, updating every component that consumed it before moving to the next module. This kept the blast radius small — at any point, the application was fully functional with some stores on Vuex and others on Pinia. Pinia's built-in TypeScript support also improved type safety across the stores, tightening up types that had been looser under Vuex.
           </p>
 
-          <h3>Phase 7: Drop the Compatibility Build</h3>
+          <h3>Phase 6: Drop the Compatibility Build</h3>
           <p>
             The final phase was removing <code>@vue/compat</code> and running on pure Vue 3. By this point, all deprecation warnings had been resolved. Dropping compat was a single-line config change followed by a full regression test.
           </p>
@@ -207,8 +202,8 @@ useHead({
               <span class="result-label">Sprints to complete</span>
             </div>
             <div class="result-card">
-              <span class="result-value mono">0</span>
-              <span class="result-label">Production downtime</span>
+              <span class="result-value mono">1</span>
+              <span class="result-label">Sprint to validate</span>
             </div>
           </div>
 
@@ -219,7 +214,7 @@ useHead({
             <li><strong>Dramatically faster development</strong> — Vite's dev server starts in under a second versus 30+ seconds with Webpack. Hot module replacement is near-instant. Developers spend less time waiting and more time building.</li>
             <li><strong>Better code organization</strong> — the Composition API and composables replaced scattered Options API logic and fragile mixins. Related code lives together by feature, making components easier to read and maintain.</li>
             <li><strong>Simpler state management</strong> — Pinia stores are smaller, fully typed, and don't require the mutation ceremony that Vuex demanded. New stores take minutes to set up instead of hours.</li>
-            <li><strong>Type safety</strong> — TypeScript catches bugs at compile time that previously only showed up in production. Typed props, emits, and store access eliminate an entire class of runtime errors.</li>
+            <li><strong>Stronger type safety</strong> — Pinia's built-in TypeScript support tightened store types that had been looser under Vuex, and Vue 3's Composition API improved type inference for props, emits, and template refs across the board.</li>
             <li><strong>Modern ecosystem access</strong> — the team can now adopt any Vue 3 library, receive security patches, and take advantage of ongoing framework improvements.</li>
           </ul>
 
@@ -238,10 +233,10 @@ useHead({
           </p>
           <ul>
             <li><strong>Audit before you code.</strong> The week spent mapping the codebase paid for itself many times over. Every ticket was scoped before the first line of migration code was written. No surprises, no scope creep.</li>
-            <li><strong>Migrate in phases, not all at once.</strong> Build tooling → framework → state management → components → UI framework → TypeScript. Each phase is independently testable and deployable.</li>
+            <li><strong>Migrate in phases, not all at once.</strong> Build tooling → framework → components → UI framework → state management. Each phase is independently testable and deployable.</li>
             <li><strong>Use the compatibility build.</strong> <code>@vue/compat</code> is the single most important tool for a large migration. It lets you ship continuously while migrating incrementally.</li>
             <li><strong>Vuetify is the hardest part.</strong> If your app uses Vuetify, plan for the component framework migration to take more time than the Vue framework migration itself.</li>
-            <li><strong>Keep shipping.</strong> The application was deployable at every stage. No feature freeze. No long-running branch. Every ticket was a PR that merged to main and went to production.</li>
+            <li><strong>Validate before you merge.</strong> We paused pushes to main for a sprint to validate the migration end-to-end. That dedicated validation time caught issues that would have been harder to debug in production.</li>
           </ul>
         </section>
 

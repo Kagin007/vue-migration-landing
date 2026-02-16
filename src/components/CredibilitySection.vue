@@ -23,7 +23,7 @@ function scrollTo(id) {
           <p>
             I'm a fullstack developer who recently completed a full Vue 2 to Vue 3 migration
             on a production enterprise application (300+ files) — Options API to Composition API, Vuex to Pinia,
-            Vuetify 2 to Vuetify 3, Vue CLI to Vite, and TypeScript adoption across the entire codebase.
+            Vuetify 2 to Vuetify 3, and Vue CLI to Vite.
           </p>
           <p>
             I broke the work into 40 structured tickets and completed it in just two sprints using
@@ -97,13 +97,6 @@ function scrollTo(id) {
               <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
             </svg>
             <span class="stack-to mono">Vite</span>
-          </div>
-          <div class="stack-item">
-            <span class="stack-from mono">JavaScript</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-            </svg>
-            <span class="stack-to mono">TypeScript</span>
           </div>
         </div>
       </div>
