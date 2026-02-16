@@ -83,7 +83,7 @@ useHead({
 
         <section class="blog-content">
           <p class="lead">
-            I led the full Vue 2 to Vue 3 migration of a production enterprise application — 300+ files, touching every layer of the stack. Vue CLI to Vite. Options API to Composition API. Vuetify 2 to Vuetify 3. Vuex to Pinia. The entire migration was broken into 40 structured tickets and completed in two sprints, with a dedicated validation sprint before merging to main.
+            I led the full Vue 2 to Vue 3 migration of a production enterprise application — 300+ files, touching every layer of the stack. Vue CLI to Vite. Vuetify 2 to Vuetify 3. Vuex to Pinia. The team had already converted the codebase from Options API to Composition API ahead of the migration. The remaining work was broken into 40 structured tickets and completed in two sprints, with a dedicated validation sprint before merging to main.
           </p>
           <p>
             This is the full breakdown of how it happened: what the codebase looked like before, how I planned the work, the order of execution, what went wrong, and the measurable results.
@@ -94,7 +94,7 @@ useHead({
             The application was a production enterprise SaaS platform built on Vue 2, serving active users daily. Here's what the stack looked like before the migration started:
           </p>
           <ul>
-            <li><strong>Vue 2</strong> with Options API across all components</li>
+            <li><strong>Vue 2</strong> with Composition API (converted from Options API ahead of the migration)</li>
             <li><strong>Vuex</strong> for state management with namespaced modules</li>
             <li><strong>Vuetify 2</strong> as the component framework — heavily used across nearly every view</li>
             <li><strong>Vue CLI + Webpack</strong> for build tooling</li>
@@ -102,7 +102,7 @@ useHead({
             <li><strong>300+ files</strong> including components, views, stores, composables, and utilities</li>
           </ul>
           <p>
-            The codebase had the usual patterns you see in mature Vue 2 applications: mixins for shared logic, Vuex modules with mutations and actions, Options API components with logic spread across <code>data</code>, <code>computed</code>, <code>methods</code>, and <code>watch</code> blocks. Some components were well-structured. Others had grown organically over years of feature development.
+            Before the Vue 3 migration began, the team had already converted the entire codebase from the Options API to the Composition API with <code>&lt;script setup&gt;</code>. This was a deliberate preparation step — mixins were refactored into composables, and every component was updated to use the new API. That work was the highest-effort phase and touched every file, but it meant the actual Vue 3 migration could focus purely on framework and library upgrades without also rewriting component patterns.
           </p>
 
           <h2>The Audit: Turning Unknowns Into Tickets</h2>
@@ -136,15 +136,12 @@ useHead({
             This phase also uncovered environment variable patterns, proxy configurations, and build-time assumptions that would have been harder to debug if mixed in with the framework migration.
           </p>
 
-          <h3>Phase 2: Vue 2 to Vue 3 + Component Migration (Options API to Composition API)</h3>
+          <h3>Phase 2: Vue 2 to Vue 3</h3>
           <p>
-            Because there's no bridge version between Vuetify 2 and Vuetify 3, an incremental migration using <code>@vue/compat</code> wasn't an option. The entire migration had to be done in one big shot — Vue 3, Composition API, and Vuetify 3 all needed to land together. That meant all the work happened on a long-running branch, validated thoroughly before merging.
+            Because there's no bridge version between Vuetify 2 and Vuetify 3, an incremental migration using <code>@vue/compat</code> wasn't an option. The entire migration had to be done in one big shot — Vue 3 and Vuetify 3 needed to land together. That meant all the work happened on a long-running branch, validated thoroughly before merging.
           </p>
           <p>
-            I started by upgrading to Vue 3 and converting components from the Options API to the Composition API with <code>&lt;script setup&gt;</code>. This phase had the highest ticket count because it touched every file.
-          </p>
-          <p>
-            Mixins were the hardest part. Each mixin had to be refactored into a composable, and every component that used that mixin needed to be updated to import the composable instead. Some mixins had naming conflicts with component-local data, which only surfaced at runtime — one of many <router-link to="/blog/vue-2-to-vue-3-gotchas">subtle breaking changes</router-link> that don't cause build errors. I handled these by converting the most-used mixins first, then working through the long tail.
+            Since the team had already converted to the Composition API, this phase focused on upgrading the core framework to Vue 3 and addressing the <router-link to="/blog/vue-2-to-vue-3-gotchas">subtle breaking changes</router-link> — renamed lifecycle hooks, changed v-model behavior, removed APIs like <code>$listeners</code> and <code>$children</code>, and updated third-party dependencies to their Vue 3 compatible versions.
           </p>
 
           <h3>Phase 3: Vuetify 2 to Vuetify 3</h3>
@@ -169,7 +166,7 @@ useHead({
           </p>
           <ul>
             <li><strong>Vuetify's data table rewrite</strong> took longer than estimated. Each table with server-side pagination had a unique combination of slots, events, and configuration that couldn't be batch-converted. I should have estimated each table individually rather than as a group.</li>
-            <li><strong>Mixin naming conflicts</strong> only appeared at runtime. A mixin that defined a <code>loading</code> data property conflicted with a component that had its own <code>loading</code> ref. In the Options API, the component's property silently won. In the Composition API, both existed and the template bound to the wrong one. These required careful testing to catch.</li>
+            <li><strong>Mixin naming conflicts</strong> during the Composition API conversion only appeared at runtime. A mixin that defined a <code>loading</code> data property conflicted with a component that had its own <code>loading</code> ref. In the Options API, the component's property silently won. In the Composition API, both existed and the template bound to the wrong one. These required careful testing to catch.</li>
             <li><strong>Third-party library lag</strong> — two dependencies didn't have Vue 3 compatible versions at the time. One needed a fork with a small patch. The other had a beta version that was stable enough to use. Both required time I hadn't accounted for.</li>
           </ul>
 
@@ -223,7 +220,7 @@ useHead({
           </p>
           <ul>
             <li><strong>Audit before you code.</strong> The week spent mapping the codebase paid for itself many times over. Every ticket was scoped before the first line of migration code was written. No surprises, no scope creep.</li>
-            <li><strong>Migrate in phases, not all at once.</strong> Build tooling → framework + components → UI framework → state management. Even when you can't ship incrementally, structuring the work in phases keeps it manageable.</li>
+            <li><strong>Migrate in phases, not all at once.</strong> Composition API conversion → build tooling → framework → UI framework → state management. Even when you can't ship incrementally, structuring the work in phases keeps it manageable.</li>
             <li><strong>Vuetify means big-bang.</strong> There's no bridge between Vuetify 2 and Vuetify 3, so <code>@vue/compat</code> doesn't help. Plan for a long-running branch and a dedicated validation sprint before merging.</li>
             <li><strong>Vuetify is the hardest part.</strong> If your app uses Vuetify, plan for the component framework migration to take more time than the Vue framework migration itself.</li>
             <li><strong>Validate before you merge.</strong> We paused pushes to main for a sprint to validate the migration end-to-end. That dedicated validation time caught issues that would have been harder to debug in production.</li>
