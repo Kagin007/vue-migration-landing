@@ -90,7 +90,7 @@ useHead({
             This isn't a theoretical risk. Vulnerabilities discovered in Vue 2 after December 2023 will not be patched. Your application is exposed to whatever security issues emerge, and the longer you wait, the wider that exposure grows.
           </p>
           <p>
-            Beyond security, the ecosystem has moved on. Libraries like Vuetify, Nuxt, and Vue Router are focusing their efforts on Vue 3. New releases of these tools no longer support Vue 2, which means you're locked out of bug fixes and features in your dependencies too.
+            Beyond security, the ecosystem has moved on. Libraries like Vuetify, Nuxt, and Vue Router are focusing their efforts on Vue 3. New releases of these tools no longer support Vue 2, which means you're locked out of bug fixes and features in your dependencies too. If your application uses Vuetify, the <router-link to="/blog/vuetify-2-to-vuetify-3-migration">Vuetify 2 to Vuetify 3 migration</router-link> is a significant undertaking on its own.
           </p>
 
           <h2>The Real Risks of Staying on Vue 2</h2>
@@ -130,7 +130,7 @@ useHead({
 
           <h2>How to Plan Your Migration</h2>
           <p>
-            A Vue 2 to Vue 3 migration is not a rewrite. It's a structured, incremental process that keeps your application deployable throughout. Here's what a realistic migration path looks like:
+            A Vue 2 to Vue 3 migration is not a rewrite. It's a structured process that can be broken into concrete phases. For a real-world example, see how I handled a <router-link to="/blog/vue-2-to-vue-3-migration-case-study">300+ file enterprise migration</router-link>. Here's what a realistic migration path looks like:
           </p>
 
           <h3>1. Audit Your Codebase</h3>
@@ -158,7 +158,7 @@ useHead({
 
           <h3>5. Convert Components</h3>
           <p>
-            Work through your components systematically: update the Options API to the Composition API where it makes sense, replace removed APIs (<code>$listeners</code>, <code>$children</code>, filters), and adopt <code>&lt;script setup&gt;</code> for cleaner single-file components.
+            Work through your components systematically: update the Options API to the Composition API where it makes sense, replace removed APIs (<code>$listeners</code>, <code>$children</code>, filters), and adopt <code>&lt;script setup&gt;</code> for cleaner single-file components. Watch out for the <router-link to="/blog/vue-2-to-vue-3-gotchas">subtle breaking changes</router-link> that don't cause build errors but break things at runtime.
           </p>
 
           <h3>6. Drop the Compatibility Build</h3>

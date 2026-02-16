@@ -83,7 +83,7 @@ useHead({
 
         <section class="blog-content">
           <p class="lead">
-            The Vue 2 to Vue 3 migration guide lists every breaking change, but some of them don't cause build errors. They cause <em>runtime</em> bugs — components that render wrong, events that silently stop firing, props that arrive as <code>undefined</code>. These are the gotchas I've hit on real migrations, including a 300+ file enterprise application. Each one slipped past the compiler and had to be caught through testing or code review.
+            The Vue 2 to Vue 3 migration guide lists every breaking change, but some of them don't cause build errors. They cause <em>runtime</em> bugs — components that render wrong, events that silently stop firing, props that arrive as <code>undefined</code>. These are the gotchas I've hit on real migrations, including a <router-link to="/blog/vue-2-to-vue-3-migration-case-study">300+ file enterprise application</router-link>. Each one slipped past the compiler and had to be caught through testing or code review.
           </p>
 
           <h2>1. v-model Works Completely Differently</h2>
@@ -112,7 +112,7 @@ function update(val) {
 }</code></pre>
           </div>
           <p>
-            If you have dozens of form components, this is one of the most time-consuming changes because every single one needs to be updated. Search your codebase for <code>this.$emit('input'</code> and <code>props: ['value']</code> to find them all.
+            If you have dozens of form components, this is one of the most time-consuming changes because every single one needs to be updated. If you're using Vuetify, the <router-link to="/blog/vuetify-2-to-vuetify-3-migration">Vuetify 2 to 3 migration</router-link> compounds this — form input APIs changed significantly there too. Search your codebase for <code>this.$emit('input'</code> and <code>props: ['value']</code> to find them all.
           </p>
 
           <h2>2. Attribute Fallthrough Behavior Changed</h2>

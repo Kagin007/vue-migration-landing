@@ -144,12 +144,12 @@ useHead({
             I started by upgrading to Vue 3 and converting components from the Options API to the Composition API with <code>&lt;script setup&gt;</code>. This phase had the highest ticket count because it touched every file.
           </p>
           <p>
-            Mixins were the hardest part. Each mixin had to be refactored into a composable, and every component that used that mixin needed to be updated to import the composable instead. Some mixins had naming conflicts with component-local data, which only surfaced at runtime. I handled these by converting the most-used mixins first, then working through the long tail.
+            Mixins were the hardest part. Each mixin had to be refactored into a composable, and every component that used that mixin needed to be updated to import the composable instead. Some mixins had naming conflicts with component-local data, which only surfaced at runtime — one of many <router-link to="/blog/vue-2-to-vue-3-gotchas">subtle breaking changes</router-link> that don't cause build errors. I handled these by converting the most-used mixins first, then working through the long tail.
           </p>
 
           <h3>Phase 3: Vuetify 2 to Vuetify 3</h3>
           <p>
-            This was the most time-consuming phase. Vuetify 3 is effectively a rewrite — the grid system, component prop APIs, theming system, and activator patterns all changed. I worked through it component type by component type: all buttons first, then all form inputs, then dialogs and menus, then data tables last (since they required the most individual attention).
+            This was the most time-consuming phase. <router-link to="/blog/vuetify-2-to-vuetify-3-migration">Vuetify 3 is effectively a rewrite</router-link> — the grid system, component prop APIs, theming system, and activator patterns all changed. I worked through it component type by component type: all buttons first, then all form inputs, then dialogs and menus, then data tables last (since they required the most individual attention).
           </p>
           <p>
             Data tables with server-side pagination, custom slots, and inline editing took the longest per instance. I budgeted extra time for these and tested each one individually.

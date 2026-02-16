@@ -86,12 +86,12 @@ useHead({
             If your Vue 2 application uses Vuetify, the component framework migration is going to be the most time-consuming part of your Vue 3 upgrade. Vuetify 3 is not an incremental update — it's a near-complete rewrite. The grid system changed, component prop names changed, the theming system was rebuilt, SASS variables moved to CSS custom properties, and dozens of components have entirely new APIs.
           </p>
           <p>
-            I migrated a 300+ file enterprise application from Vuetify 2 to Vuetify 3. Here's what I learned about what actually changes, what takes the most time, and how to approach it without losing your mind.
+            I migrated a <router-link to="/blog/vue-2-to-vue-3-migration-case-study">300+ file enterprise application</router-link> from Vuetify 2 to Vuetify 3. Here's what I learned about what actually changes, what takes the most time, and how to approach it without losing your mind.
           </p>
 
           <h2>Why Vuetify Makes Vue 3 Migration Harder</h2>
           <p>
-            A Vue 2 to Vue 3 migration without Vuetify is mostly a framework-level concern — you update lifecycle hooks, swap Vuex for Pinia, adopt the Composition API, and move to Vite. The component templates largely stay the same.
+            A Vue 2 to Vue 3 migration without Vuetify is mostly a framework-level concern — you update lifecycle hooks, swap Vuex for Pinia, adopt the Composition API, and move to Vite (though even that has <router-link to="/blog/vue-2-to-vue-3-gotchas">plenty of subtle gotchas</router-link>). The component templates largely stay the same.
           </p>
           <p>
             With Vuetify, you're doing two major migrations at once. Every template that uses a Vuetify component is potentially affected. If 80% of your components use <code>v-btn</code>, <code>v-card</code>, <code>v-text-field</code>, or <code>v-data-table</code>, then 80% of your templates need changes. The Vuetify migration touches more lines of code than the Vue framework migration itself.
