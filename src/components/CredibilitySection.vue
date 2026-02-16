@@ -47,6 +47,19 @@ function scrollTo(id) {
         </div>
       </div>
 
+      <div class="testimonial">
+        <svg class="quote-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C9.591 11.69 11 13.194 11 15c0 1.933-1.567 3.5-3.5 3.5-1.196 0-2.31-.603-2.917-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C19.591 11.69 21 13.194 21 15c0 1.933-1.567 3.5-3.5 3.5-1.196 0-2.31-.603-2.917-1.179z"/>
+        </svg>
+        <blockquote>
+          <p>He's doing an incredible job both in terms of technical and leadership ability. Through hard work and initiative, he's made this a reality far sooner than any of us expected.</p>
+        </blockquote>
+        <div class="testimonial-author">
+          <span class="author-name">Staff Engineer</span>
+          <span class="author-title">Enterprise SaaS Company</span>
+        </div>
+      </div>
+
       <div class="tech-stack">
         <span class="stack-label mono">Migration Coverage</span>
         <div class="stack-items">
@@ -141,6 +154,51 @@ function scrollTo(id) {
   font-size: 0.85rem;
 }
 
+
+.testimonial {
+  max-width: 720px;
+  margin: 0 auto 32px;
+  padding: 36px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  text-align: center;
+}
+
+.quote-icon {
+  color: var(--accent);
+  opacity: 0.3;
+  margin-bottom: 16px;
+}
+
+.testimonial blockquote {
+  margin: 0;
+}
+
+.testimonial blockquote p {
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.author-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.author-title {
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+}
 
 .tech-stack {
   text-align: center;
