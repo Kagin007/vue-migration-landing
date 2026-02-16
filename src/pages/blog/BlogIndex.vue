@@ -23,6 +23,13 @@ useHead({
 
 const posts = [
   {
+    title: 'Vuetify 2 to Vuetify 3 Migration: The Hardest Part of Your Vue 3 Upgrade',
+    description: 'Vuetify 3 is a near-complete rewrite. Grid system, component APIs, theming, SASS variables — almost everything changed. A practical guide based on a 300+ file production migration.',
+    path: '/blog/vuetify-2-to-vuetify-3-migration',
+    date: 'February 16, 2026',
+    datetime: '2026-02-16',
+  },
+  {
     title: 'Vue 2 to Vue 3 Migration Gotchas: 10 Breaking Changes That Catch Teams Off Guard',
     description: 'The Vue 2 to Vue 3 migration has subtle breaking changes that slip past linters and build tools. Here are 10 gotchas from real migration experience — and how to fix each one.',
     path: '/blog/vue-2-to-vue-3-gotchas',
