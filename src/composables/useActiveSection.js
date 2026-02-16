@@ -1,10 +1,14 @@
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, watch, nextTick } from 'vue'
+import { useRoute } from 'vue-router'
 
 export function useActiveSection(sectionIds) {
   const activeSection = ref('')
+  const route = useRoute()
   let observer = null
 
-  onMounted(() => {
+  function observe() {
+    observer?.disconnect()
+
     observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -20,6 +24,13 @@ export function useActiveSection(sectionIds) {
       const el = document.getElementById(id)
       if (el) observer.observe(el)
     })
+  }
+
+  onMounted(observe)
+
+  // Re-observe when route changes — sections are new DOM elements after navigation
+  watch(() => route.path, () => {
+    nextTick(observe)
   })
 
   onUnmounted(() => {
