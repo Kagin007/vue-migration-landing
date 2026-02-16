@@ -136,23 +136,18 @@ useHead({
             This phase also uncovered environment variable patterns, proxy configurations, and build-time assumptions that would have been harder to debug if mixed in with the framework migration.
           </p>
 
-          <h3>Phase 2: Vue 3 + Compatibility Build</h3>
+          <h3>Phase 2: Vue 2 to Vue 3 + Component Migration (Options API to Composition API)</h3>
           <p>
-            Next, I upgraded the core framework to Vue 3 using the <code>@vue/compat</code> compatibility build. This is the key to an incremental migration — compat mode lets Vue 2 code run on the Vue 3 runtime, logging deprecation warnings for every pattern that needs updating.
+            Because there's no bridge version between Vuetify 2 and Vuetify 3, an incremental migration using <code>@vue/compat</code> wasn't an option. The entire migration had to be done in one big shot — Vue 3, Composition API, and Vuetify 3 all needed to land together. That meant all the work happened on a long-running branch, validated thoroughly before merging.
           </p>
           <p>
-            With compat mode enabled, the application still worked. Every Vue 2 pattern — Options API, filters, <code>$listeners</code>, <code>$on</code>/<code>$off</code> — continued to function but logged warnings. This gave me a live checklist of everything that needed to change, in priority order.
-          </p>
-
-          <h3>Phase 3: Component Migration (Options API to Composition API)</h3>
-          <p>
-            I converted components from the Options API to the Composition API with <code>&lt;script setup&gt;</code> early in the migration because it touched every file and unlocked the rest of the work. This phase had the highest ticket count.
+            I started by upgrading to Vue 3 and converting components from the Options API to the Composition API with <code>&lt;script setup&gt;</code>. This phase had the highest ticket count because it touched every file.
           </p>
           <p>
             Mixins were the hardest part. Each mixin had to be refactored into a composable, and every component that used that mixin needed to be updated to import the composable instead. Some mixins had naming conflicts with component-local data, which only surfaced at runtime. I handled these by converting the most-used mixins first, then working through the long tail.
           </p>
 
-          <h3>Phase 4: Vuetify 2 to Vuetify 3</h3>
+          <h3>Phase 3: Vuetify 2 to Vuetify 3</h3>
           <p>
             This was the most time-consuming phase. Vuetify 3 is effectively a rewrite — the grid system, component prop APIs, theming system, and activator patterns all changed. I worked through it component type by component type: all buttons first, then all form inputs, then dialogs and menus, then data tables last (since they required the most individual attention).
           </p>
@@ -160,17 +155,12 @@ useHead({
             Data tables with server-side pagination, custom slots, and inline editing took the longest per instance. I budgeted extra time for these and tested each one individually.
           </p>
 
-          <h3>Phase 5: Vuex to Pinia</h3>
+          <h3>Phase 4: Vuex to Pinia</h3>
           <p>
-            I saved state management for last because the Vuex stores were stable and functional under the compat build, so there was no urgency to migrate them early. Each Vuex module became a Pinia store. Mutations were eliminated — in Pinia, you modify state directly in actions. Namespaced module access patterns were replaced with direct store imports.
+            I saved state management for last because the Vuex stores were still functional, so there was no urgency to migrate them early. Each Vuex module became a Pinia store. Mutations were eliminated — in Pinia, you modify state directly in actions. Namespaced module access patterns were replaced with direct store imports.
           </p>
           <p>
             I migrated one store module at a time, updating every component that consumed it before moving to the next module. This kept the blast radius small — at any point, the application was fully functional with some stores on Vuex and others on Pinia. Pinia's built-in TypeScript support also improved type safety across the stores, tightening up types that had been looser under Vuex.
-          </p>
-
-          <h3>Phase 6: Drop the Compatibility Build</h3>
-          <p>
-            The final phase was removing <code>@vue/compat</code> and running on pure Vue 3. By this point, all deprecation warnings had been resolved. Dropping compat was a single-line config change followed by a full regression test.
           </p>
 
           <h2>What Went Wrong</h2>
@@ -233,8 +223,8 @@ useHead({
           </p>
           <ul>
             <li><strong>Audit before you code.</strong> The week spent mapping the codebase paid for itself many times over. Every ticket was scoped before the first line of migration code was written. No surprises, no scope creep.</li>
-            <li><strong>Migrate in phases, not all at once.</strong> Build tooling → framework → components → UI framework → state management. Each phase is independently testable and deployable.</li>
-            <li><strong>Use the compatibility build.</strong> <code>@vue/compat</code> is the single most important tool for a large migration. It lets you ship continuously while migrating incrementally.</li>
+            <li><strong>Migrate in phases, not all at once.</strong> Build tooling → framework + components → UI framework → state management. Even when you can't ship incrementally, structuring the work in phases keeps it manageable.</li>
+            <li><strong>Vuetify means big-bang.</strong> There's no bridge between Vuetify 2 and Vuetify 3, so <code>@vue/compat</code> doesn't help. Plan for a long-running branch and a dedicated validation sprint before merging.</li>
             <li><strong>Vuetify is the hardest part.</strong> If your app uses Vuetify, plan for the component framework migration to take more time than the Vue framework migration itself.</li>
             <li><strong>Validate before you merge.</strong> We paused pushes to main for a sprint to validate the migration end-to-end. That dedicated validation time caught issues that would have been harder to debug in production.</li>
           </ul>

@@ -24,7 +24,7 @@ useHead({
 const posts = [
   {
     title: 'Case Study: Migrating a 300+ File Enterprise App from Vue 2 to Vue 3',
-    description: 'How I migrated a production enterprise application from Vue 2 to Vue 3 in two sprints — 300+ files, 40 tickets, zero downtime. The full breakdown of phases, decisions, and results.',
+    description: 'How I migrated a production enterprise application from Vue 2 to Vue 3 in two sprints — 300+ files, 40 tickets, one sprint of validation. The full breakdown of phases, decisions, and results.',
     path: '/blog/vue-2-to-vue-3-migration-case-study',
     date: 'February 16, 2026',
     datetime: '2026-02-16',

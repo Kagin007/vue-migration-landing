@@ -8,7 +8,7 @@ const faqs = [
   },
   {
     q: 'Will there be downtime during the Vue migration?',
-    a: 'No. The migration is done incrementally so your application stays deployable throughout the entire process. We use Vue\'s compatibility build and feature flags to ensure both old and new code can coexist during the transition. You ship to production continuously.',
+    a: 'No — your users are never affected. If your app uses Vuetify, there\'s no bridge between Vuetify 2 and 3, so the migration lands as one release rather than shipping incrementally. That means a dedicated validation sprint before merging, but zero downtime for your end users.',
   },
   {
     q: 'Do you work with our existing development team?',
