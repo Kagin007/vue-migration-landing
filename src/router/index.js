@@ -23,6 +23,10 @@ const routes = [
     path: '/blog/vue-2-to-vue-3-migration-case-study',
     component: () => import('../pages/blog/Vue3MigrationCaseStudy.vue'),
   },
+  {
+    path: '/blog/vue-3-performance-pitfalls',
+    component: () => import('../pages/blog/Vue3PerformanceGotchas.vue'),
+  },
 ]
 
 export { routes }
