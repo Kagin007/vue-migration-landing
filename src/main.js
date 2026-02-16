@@ -3,7 +3,19 @@ import './style.css'
 import App from './App.vue'
 import { routes } from './router/index.js'
 
-export const createApp = ViteSSG(App, { routes }, ({ isClient }) => {
+export const createApp = ViteSSG(App, {
+  routes,
+  scrollBehavior(to) {
+    if (to.hash) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve({ el: to.hash, behavior: 'smooth' })
+        }, 300)
+      })
+    }
+    return { top: 0 }
+  },
+}, ({ isClient }) => {
   if (isClient) {
     import('@vercel/analytics').then(({ inject }) => inject())
     import('@vercel/speed-insights').then(({ injectSpeedInsights }) => injectSpeedInsights())
