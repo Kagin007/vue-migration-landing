@@ -3,12 +3,12 @@ import AssessmentTool from './assessment/AssessmentTool.vue'
 </script>
 
 <template>
-  <section id="assessment" class="section assessment-section section-divider">
+  <section id="assessment" class="section assessment-section section-divider" aria-labelledby="assessment-heading">
     <div class="container">
       <div class="reveal" style="text-align: center;">
         <span class="section-label">// Free Assessment</span>
-        <h2 class="section-title" style="margin-left: auto; margin-right: auto;">
-          How complex is your<br><span class="text-gradient">migration?</span>
+        <h2 id="assessment-heading" class="section-title" style="margin-left: auto; margin-right: auto;">
+          Free Vue 2 Migration<br><span class="text-gradient">Complexity Assessment</span>
         </h2>
         <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">
           Find out in under 2 minutes. Get a personalized complexity score, risk analysis, and recommended approach.

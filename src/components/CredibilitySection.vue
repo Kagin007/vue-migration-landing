@@ -7,11 +7,11 @@ function scrollTo(id) {
 </script>
 
 <template>
-  <section id="credibility" class="section">
+  <section id="credibility" class="section" aria-labelledby="credibility-heading">
     <div class="container">
       <div>
         <span class="section-label">// About & Proof</span>
-        <h2 class="section-title">Built by someone who's<br><span class="text-gradient">done the work.</span></h2>
+        <h2 id="credibility-heading" class="section-title">Your Vue Migration<br><span class="text-gradient">Consultant</span></h2>
       </div>
 
       <div class="about-card">
@@ -19,7 +19,7 @@ function scrollTo(id) {
           <img :src="profilePic" alt="Adam Schulte" class="avatar-img" />
         </div>
         <div class="about-content">
-          <h3>Hi, I'm Adam.</h3>
+          <h3>Hi, I'm Adam — Vue Migration Developer</h3>
           <p>
             I'm a fullstack developer who recently completed a full Vue 2 to Vue 3 migration
             on a production enterprise application (300+ files) — Options API to Composition API, Vuex to Pinia,

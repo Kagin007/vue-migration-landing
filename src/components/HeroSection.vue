@@ -21,16 +21,16 @@ function scrollTo(id) {
     <div class="container hero-content" :class="{ loaded }">
       <div class="hero-badge">
         <span class="badge-dot"></span>
-        <span class="mono">Vue 2 reached EOL — December 31, 2023</span>
+        <span class="mono">Vue 2 End of Life — December 31, 2023</span>
       </div>
 
       <h1 class="hero-title">
-        Your Vue 2 app has an<br>
-        <span class="text-gradient">expiration date.</span>
+        Expert Vue 2 to Vue 3<br>
+        <span class="text-gradient">Migration Services</span>
       </h1>
 
       <p class="hero-subtitle">
-        I migrate production Vue 2 applications to Vue 3 using a structured,
+        Your Vue 2 app has an expiration date. I migrate production Vue 2 applications to Vue 3 using a structured,
         battle-tested methodology — faster and with less risk than traditional consultancies.
         40 tickets. Two sprints. Proven on a 300+ file enterprise application.
       </p>

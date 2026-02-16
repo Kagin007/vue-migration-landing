@@ -62,11 +62,11 @@ const tiers = ref([
 </script>
 
 <template>
-  <section id="pricing" class="section pricing-section section-divider">
+  <section id="pricing" class="section pricing-section section-divider" aria-labelledby="pricing-heading">
     <div class="container">
       <div class="reveal" style="text-align: center;">
         <span class="section-label">// Services & Pricing</span>
-        <h2 class="section-title" style="margin-left: auto; margin-right: auto;">Flexible engagement models.<br><span class="text-gradient">Right-sized for your team.</span></h2>
+        <h2 id="pricing-heading" class="section-title" style="margin-left: auto; margin-right: auto;">Vue Migration Services & Pricing.<br><span class="text-gradient">Right-sized for your team.</span></h2>
         <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">
           Whether you need a roadmap, a guide, or someone to do the heavy lifting — there's an option that fits.
         </p>

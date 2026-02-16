@@ -40,12 +40,12 @@ async function handleSubmit() {
 </script>
 
 <template>
-  <section id="contact" class="section contact-section section-divider">
+  <section id="contact" class="section contact-section section-divider" aria-labelledby="contact-heading">
     <div class="container">
       <div class="reveal" style="text-align: center;">
         <span class="section-label">// Get in Touch</span>
-        <h2 class="section-title" style="margin-left: auto; margin-right: auto;">
-          Tell me about your<br><span class="text-gradient">project.</span>
+        <h2 id="contact-heading" class="section-title" style="margin-left: auto; margin-right: auto;">
+          Hire a Vue Migration Expert.<br>Tell Me About Your <span class="text-gradient">Project.</span>
         </h2>
         <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">
           Drop me a message and I'll get back to you within one business day.

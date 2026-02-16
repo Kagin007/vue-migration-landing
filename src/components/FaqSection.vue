@@ -3,11 +3,11 @@ import { ref } from 'vue'
 
 const faqs = [
   {
-    q: 'How long does a typical migration take?',
+    q: 'How long does a typical Vue 2 to Vue 3 migration take?',
     a: 'It depends on the size and complexity of your codebase. A small-to-medium application (30–80 components) typically takes 2–4 weeks for a full migration. Larger applications may take 6–10 weeks. The codebase audit gives you an accurate timeline before any execution begins.',
   },
   {
-    q: 'Will there be downtime during the migration?',
+    q: 'Will there be downtime during the Vue migration?',
     a: 'No. The migration is done incrementally so your application stays deployable throughout the entire process. We use Vue\'s compatibility build and feature flags to ensure both old and new code can coexist during the transition. You ship to production continuously.',
   },
   {
@@ -15,12 +15,16 @@ const faqs = [
     a: 'Absolutely. In the Guided Migration model, I work directly alongside your team through code reviews, pair programming, and architecture guidance. For the Full Migration model, I integrate with your existing PR workflow so your team has full visibility and can review every change.',
   },
   {
-    q: 'What if we only need part of the migration?',
+    q: 'What if we only need a partial Vue migration?',
     a: 'That\'s completely fine. Maybe you only need the Vuex-to-Pinia migration, or just the build tooling upgrade to Vite. The codebase audit will identify which pieces make sense to tackle and in what order. You can stop at any phase — each increment delivers standalone value.',
   },
   {
-    q: 'How is this different from hiring a consultancy?',
+    q: 'How is hiring a Vue migration consultant different from a consultancy?',
     a: 'Traditional consultancies assign a rotating team of developers who need ramp-up time on your codebase, charge agency rates, and often follow generic playbooks. I\'m a single developer with direct, recent experience completing this exact migration. Lower overhead, faster execution, and you get the same person from audit through handoff.',
+  },
+  {
+    q: 'What does Vue 2 end of life mean for my application?',
+    a: 'Vue 2 reached end of life on December 31, 2023, which means it no longer receives security patches, bug fixes, or ecosystem updates. Your application is exposed to unpatched vulnerabilities and increasingly incompatible dependencies. Migrating to Vue 3 restores active support, unlocks modern tooling like Vite and Pinia, and future-proofs your codebase.',
   },
 ]
 
@@ -32,11 +36,11 @@ function toggle(i) {
 </script>
 
 <template>
-  <section id="faq" class="section faq-section section-divider">
+  <section id="faq" class="section faq-section section-divider" aria-labelledby="faq-heading">
     <div class="container">
       <div class="reveal" style="text-align: center;">
         <span class="section-label">// FAQ</span>
-        <h2 class="section-title" style="margin-left: auto; margin-right: auto;">Common questions.<br><span class="text-gradient">Straight answers.</span></h2>
+        <h2 id="faq-heading" class="section-title" style="margin-left: auto; margin-right: auto;">Vue 2 to Vue 3 Migration:<br><span class="text-gradient">Common Questions</span></h2>
       </div>
 
       <div class="faq-list reveal">

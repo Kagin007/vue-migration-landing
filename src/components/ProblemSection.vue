@@ -1,9 +1,9 @@
 <template>
-  <section id="problem" class="section problem-section section-divider">
+  <section id="problem" class="section problem-section section-divider" aria-labelledby="problem-heading">
     <div class="container">
       <div class="reveal">
         <span class="section-label">// The Problem</span>
-        <h2 class="section-title">Vue 2 isn't just old.<br>It's a <span class="text-gradient">liability.</span></h2>
+        <h2 id="problem-heading" class="section-title">Vue 2 End of Life: Why You Need<br>to <span class="text-gradient">Migrate Now</span></h2>
         <p class="section-subtitle">
           Since December 31, 2023, Vue 2 receives no security patches, no bug fixes, and no ecosystem updates.
           Every month you wait increases your exposure.

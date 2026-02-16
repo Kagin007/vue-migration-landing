@@ -1,11 +1,11 @@
 <template>
-  <section id="approach" class="section">
+  <section id="approach" class="section" aria-labelledby="approach-heading">
     <div class="container">
       <div class="reveal">
         <span class="section-label">// The Methodology</span>
-        <h2 class="section-title">Structured. Incremental.<br><span class="text-gradient">Battle-tested.</span></h2>
+        <h2 id="approach-heading" class="section-title">A Proven Vue Migration<br><span class="text-gradient">Methodology</span></h2>
         <p class="section-subtitle">
-          No big-bang rewrites. No guesswork. A proven four-phase process that
+          Structured. Incremental. Battle-tested. No big-bang rewrites. No guesswork. A proven four-phase process that
           keeps your application running while we modernize it underneath.
         </p>
       </div>
@@ -53,7 +53,7 @@
 <script setup>
 const steps = [
   {
-    title: 'Codebase Audit',
+    title: 'Vue Codebase Audit',
     badge: 'Week 1',
     description: 'A thorough assessment of your current Vue 2 application to map dependencies, identify risks, and build a realistic migration plan.',
     details: [
@@ -75,7 +75,7 @@ const steps = [
     ],
   },
   {
-    title: 'Incremental Execution',
+    title: 'Incremental Migration',
     badge: 'Weeks 2–6',
     description: 'Methodical migration executed in small, reviewable increments. Your app stays deployable throughout the process.',
     details: [
