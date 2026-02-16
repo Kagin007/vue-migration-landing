@@ -26,7 +26,7 @@ useHead({
     { property: 'og:image:height', content: '630' },
     { property: 'og:image:type', content: 'image/png' },
     { property: 'og:site_name', content: 'Vue Migration Consulting' },
-    { property: 'article:published_time', content: '2025-02-10T00:00:00Z' },
+    { property: 'article:published_time', content: '2026-02-16T00:00:00Z' },
     { property: 'article:author', content: 'Adam Schulte' },
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:title', content: title },
@@ -45,8 +45,8 @@ useHead({
         "headline": title,
         "description": description,
         "image": "https://www.vuemigration.dev/og-image.png",
-        "datePublished": "2025-02-10T00:00:00Z",
-        "dateModified": "2025-02-10T00:00:00Z",
+        "datePublished": "2026-02-16T00:00:00Z",
+        "dateModified": "2026-02-16T00:00:00Z",
         "author": {
           "@type": "Person",
           "name": "Adam Schulte",
@@ -77,7 +77,7 @@ useHead({
           <div class="blog-meta">
             <span>By Adam Schulte</span>
             <span class="meta-divider">|</span>
-            <time datetime="2025-02-10">February 10, 2025</time>
+            <time datetime="2026-02-16">February 16, 2026</time>
           </div>
         </header>
 

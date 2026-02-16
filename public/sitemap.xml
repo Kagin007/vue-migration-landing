@@ -6,14 +6,20 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://www.vuemigration.dev/blog</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.vuemigration.dev/blog/vue-2-end-of-life</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.vuemigration.dev/blog/vue-2-to-vue-3-gotchas</loc>
-    <lastmod>2025-02-10</lastmod>
+    <lastmod>2026-02-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

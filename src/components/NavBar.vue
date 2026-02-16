@@ -63,7 +63,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         >
           {{ link.label }}
         </a>
-        <router-link to="/blog/vue-2-end-of-life" class="nav-link">Blog</router-link>
+        <router-link to="/blog" class="nav-link">Blog</router-link>
         <a href="#contact" class="btn btn-primary nav-cta" @click.prevent="scrollTo('contact')">
           Contact
         </a>
