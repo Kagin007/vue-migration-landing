@@ -22,7 +22,7 @@ useHead({
     { property: 'og:image:height', content: '630' },
     { property: 'og:image:type', content: 'image/png' },
     { property: 'og:site_name', content: 'Vue Migration Consulting' },
-    { property: 'article:published_time', content: '2026-02-09T00:00:00Z' },
+    { property: 'article:published_time', content: '2026-01-20T00:00:00Z' },
     { property: 'article:author', content: 'Adam Schulte' },
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:title', content: 'Vue 2 End of Life: What It Means and How to Migrate to Vue 3' },
@@ -41,8 +41,8 @@ useHead({
         "headline": "Vue 2 End of Life: What It Means and How to Migrate to Vue 3",
         "description": "Vue 2 reached end of life on December 31, 2023. Learn what this means for your application, the security risks of staying on Vue 2, and how to plan your Vue 3 migration.",
         "image": "https://www.vuemigration.dev/og-image.png",
-        "datePublished": "2026-02-09T00:00:00Z",
-        "dateModified": "2026-02-09T00:00:00Z",
+        "datePublished": "2026-01-20T00:00:00Z",
+        "dateModified": "2026-01-20T00:00:00Z",
         "author": {
           "@type": "Person",
           "name": "Adam Schulte",
@@ -73,7 +73,7 @@ useHead({
           <div class="blog-meta">
             <span>By Adam Schulte</span>
             <span class="meta-divider">|</span>
-            <time datetime="2026-02-09">February 9, 2026</time>
+            <time datetime="2026-01-20">January 20, 2026</time>
           </div>
         </header>
 
