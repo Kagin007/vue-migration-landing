@@ -317,7 +317,7 @@ onMounted(() => {
             Here's what I do on every migration:
           </p>
           <ul>
-            <li><strong>Enable compat build warnings</strong> — <code>@vue/compat</code> logs deprecation warnings at runtime for every Vue 2 pattern it detects. Run through the app with the console open and fix every warning before dropping the compat build.</li>
+            <li><strong>Enable compat build warnings</strong> — <code>@vue/compat</code> logs deprecation warnings at runtime for every Vue 2 pattern it detects. Run through the app with the console open and fix every warning before dropping the compat build. While you're at it, plan your <router-link to="/blog/vuex-to-pinia-migration">Vuex to Pinia migration</router-link> — compat mode is a good time to transition your stores too.</li>
             <li><strong>Search for known patterns</strong> — <code>this.$emit('input'</code>, <code>beforeDestroy</code>, <code>.native</code>, <code>v-enter {</code>, <code>Vue.component(</code>. A codebase-wide search catches most of these before you even test.</li>
             <li><strong>Test transitions manually</strong> — Automated tests rarely cover enter/leave animations. Click through every modal, dropdown, and accordion and watch for missing animations.</li>
             <li><strong>Test cleanup paths</strong> — Navigate away from pages, close modals, switch tabs. If a component has lifecycle cleanup, test the path that triggers it.</li>

@@ -91,7 +91,7 @@ useHead({
 
           <h2>Why Vuetify Makes Vue 3 Migration Harder</h2>
           <p>
-            A Vue 2 to Vue 3 migration without Vuetify is mostly a framework-level concern — you update lifecycle hooks, swap Vuex for Pinia, adopt the Composition API, and move to Vite (though even that has <router-link to="/blog/vue-2-to-vue-3-gotchas">plenty of subtle gotchas</router-link>). The component templates largely stay the same.
+            A Vue 2 to Vue 3 migration without Vuetify is mostly a framework-level concern — you update lifecycle hooks, <router-link to="/blog/vuex-to-pinia-migration">swap Vuex for Pinia</router-link>, adopt the Composition API, and move to Vite (though even that has <router-link to="/blog/vue-2-to-vue-3-gotchas">plenty of subtle gotchas</router-link>). The component templates largely stay the same.
           </p>
           <p>
             With Vuetify, you're doing two major migrations at once. Every template that uses a Vuetify component is potentially affected. If 80% of your components use <code>v-btn</code>, <code>v-card</code>, <code>v-text-field</code>, or <code>v-data-table</code>, then 80% of your templates need changes. The Vuetify migration touches more lines of code than the Vue framework migration itself.

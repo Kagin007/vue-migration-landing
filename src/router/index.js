@@ -31,6 +31,10 @@ const routes = [
     path: '/blog/vue-3-features-guide',
     component: () => import('../pages/blog/Vue3FeaturesGuide.vue'),
   },
+  {
+    path: '/blog/vuex-to-pinia-migration',
+    component: () => import('../pages/blog/VuexToPinia.vue'),
+  },
 ]
 
 export { routes }

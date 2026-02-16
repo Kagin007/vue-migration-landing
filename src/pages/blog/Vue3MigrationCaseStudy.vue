@@ -152,7 +152,7 @@ useHead({
             Data tables with server-side pagination, custom slots, and inline editing took the longest per instance. I budgeted extra time for these and tested each one individually.
           </p>
 
-          <h3>Phase 4: Vuex to Pinia</h3>
+          <h3>Phase 4: <router-link to="/blog/vuex-to-pinia-migration">Vuex to Pinia</router-link></h3>
           <p>
             I saved state management for last because the Vuex stores were still functional, so there was no urgency to migrate them early. Each Vuex module became a Pinia store. Mutations were eliminated — in Pinia, you modify state directly in actions. Namespaced module access patterns were replaced with direct store imports.
           </p>

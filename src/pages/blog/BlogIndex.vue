@@ -23,6 +23,13 @@ useHead({
 
 const posts = [
   {
+    title: 'Vuex to Pinia: Why and How to Migrate Your Vue Store',
+    description: 'Vuex 4 works with Vue 3, so why bother migrating to Pinia? Here\'s the practical case for switching — and a step-by-step approach based on migrating a production application with 20+ store modules.',
+    path: '/blog/vuex-to-pinia-migration',
+    date: 'February 16, 2026',
+    datetime: '2026-02-16',
+  },
+  {
     title: '3 Vue 3 Features That Change How You Build Components',
     description: 'defineExpose, shallowRef, and Teleport solve problems that Vue 2 teams worked around for years. Practical examples from a production migration — controlling component APIs, managing third-party state, and escaping DOM hierarchy constraints.',
     path: '/blog/vue-3-features-guide',

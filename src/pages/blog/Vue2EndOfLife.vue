@@ -121,7 +121,7 @@ useHead({
           </p>
           <ul>
             <li><strong>Composition API</strong> — Better code organization, reusability through composables, and cleaner separation of concerns. Logic that was scattered across <code>data</code>, <code>computed</code>, <code>methods</code>, and <code>watch</code> options can live together by feature.</li>
-            <li><strong>Pinia over Vuex</strong> — A simpler, fully typed store that drops the ceremony of mutations and modules. Less boilerplate, better DevTools integration, and first-class TypeScript support.</li>
+            <li><strong>Pinia over Vuex</strong> — A <router-link to="/blog/vuex-to-pinia-migration">simpler, fully typed store</router-link> that drops the ceremony of mutations and modules. Less boilerplate, better DevTools integration, and first-class TypeScript support.</li>
             <li><strong>Vite</strong> — Sub-second dev server startup instead of waiting 30+ seconds for Webpack. Hot module replacement that actually feels instant.</li>
             <li><strong>Better TypeScript support</strong> — Vue 3 is written in TypeScript. Template type checking, typed props, and typed emits work out of the box.</li>
             <li><strong>Smaller bundle size</strong> — Vue 3's tree-shakable architecture means you only ship the features you use. The runtime is roughly 40% smaller than Vue 2.</li>
@@ -153,7 +153,7 @@ useHead({
 
           <h3>4. Migrate State Management</h3>
           <p>
-            Move from Vuex to Pinia. Pinia is the officially recommended store for Vue 3, and the migration is straightforward — especially if you migrate one store module at a time.
+            <router-link to="/blog/vuex-to-pinia-migration">Move from Vuex to Pinia.</router-link> Pinia is the officially recommended store for Vue 3, and the migration is straightforward — especially if you migrate one store module at a time.
           </p>
 
           <h3>5. Convert Components</h3>
