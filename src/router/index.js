@@ -27,6 +27,10 @@ const routes = [
     path: '/blog/vue-3-performance-pitfalls',
     component: () => import('../pages/blog/Vue3PerformanceGotchas.vue'),
   },
+  {
+    path: '/blog/vue-3-features-guide',
+    component: () => import('../pages/blog/Vue3FeaturesGuide.vue'),
+  },
 ]
 
 export { routes }

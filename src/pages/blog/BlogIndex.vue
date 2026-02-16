@@ -23,6 +23,13 @@ useHead({
 
 const posts = [
   {
+    title: '3 Vue 3 Features That Change How You Build Components',
+    description: 'defineExpose, shallowRef, and Teleport solve problems that Vue 2 teams worked around for years. Practical examples from a production migration — controlling component APIs, managing third-party state, and escaping DOM hierarchy constraints.',
+    path: '/blog/vue-3-features-guide',
+    date: 'February 16, 2026',
+    datetime: '2026-02-16',
+  },
+  {
     title: 'Vue 3 Performance: Eager Reactivity, shallowRef, and Computed Stability',
     description: 'Vue 3\'s reactivity system is more aggressive than Vue 2\'s. Two real performance patterns from a production migration — shallowRef for third-party libraries and computed stability for reactive chains — and how to fix them.',
     path: '/blog/vue-3-performance-pitfalls',
