@@ -58,12 +58,12 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
           :key="link.id"
           :href="`#${link.id}`"
           class="nav-link"
-          :class="{ active: activeSection === link.id }"
+          :class="{ active: route.path === '/' && activeSection === link.id }"
           @click.prevent="scrollTo(link.id)"
         >
           {{ link.label }}
         </a>
-        <router-link to="/blog" class="nav-link" @click="mobileOpen = false">Blog</router-link>
+        <router-link to="/blog" class="nav-link" :class="{ active: route.path.startsWith('/blog') }" @click="mobileOpen = false">Blog</router-link>
         <a href="#contact" class="btn btn-primary nav-cta" @click.prevent="scrollTo('contact')">
           Contact
         </a>
