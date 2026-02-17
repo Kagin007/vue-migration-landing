@@ -167,7 +167,6 @@ useHead({
           <ul>
             <li><strong>Vuetify's data table rewrite</strong> took longer than estimated. Each table with server-side pagination had a unique combination of slots, events, and configuration that couldn't be batch-converted. I should have estimated each table individually rather than as a group.</li>
             <li><strong>Mixin naming conflicts</strong> during the Composition API conversion only appeared at runtime. A mixin that defined a <code>loading</code> data property conflicted with a component that had its own <code>loading</code> ref. In the Options API, the component's property silently won. In the Composition API, both existed and the template bound to the wrong one. These required careful testing to catch.</li>
-            <li><strong>Third-party library lag</strong> — two dependencies didn't have Vue 3 compatible versions at the time. One needed a fork with a small patch. The other had a beta version that was stable enough to use. Both required time I hadn't accounted for.</li>
           </ul>
 
           <h2>The Results</h2>
