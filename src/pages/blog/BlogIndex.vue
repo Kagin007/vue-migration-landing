@@ -79,7 +79,7 @@ const posts = [
     <section class="blog-index section">
       <div class="container blog-container">
         <header class="blog-index-header">
-          <span class="section-label">Blog</span>
+          <span class="section-label">// Blog</span>
           <h1>Vue Migration Blog</h1>
           <p class="section-subtitle">
             Practical articles on Vue 2 to Vue 3 migration — breaking changes, gotchas, and advice from real migration experience.

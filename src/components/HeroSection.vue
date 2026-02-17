@@ -75,10 +75,9 @@ function scrollTo(id) {
 <style scoped>
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: calc(100vh - 72px);
   display: flex;
   align-items: center;
-  padding-top: 72px;
   overflow: hidden;
   background: var(--gradient-hero);
 }

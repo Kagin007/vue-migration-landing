@@ -72,7 +72,7 @@ useHead({
     <article class="blog-post section">
       <div class="container blog-container">
         <header class="blog-header">
-          <span class="section-label">Blog</span>
+          <span class="section-label">// Blog</span>
           <h1>3 Vue 3 Features That Change How You Build Components</h1>
           <div class="blog-meta">
             <span>By Adam Schulte</span>

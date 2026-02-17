@@ -72,7 +72,7 @@ useHead({
     <article class="blog-post section">
       <div class="container blog-container">
         <header class="blog-header">
-          <span class="section-label">Blog</span>
+          <span class="section-label">// Blog</span>
           <h1>Vuetify 2 to Vuetify 3 Migration: The Hardest Part of Your Vue 3 Upgrade</h1>
           <div class="blog-meta">
             <span>By Adam Schulte</span>
@@ -327,12 +327,12 @@ export default createVuetify({
             Spacing helpers (<code>pa-4</code>, <code>mx-2</code>, etc.) mostly survived unchanged, but some edge cases around responsive spacing and negative margins behave differently. If your layouts look slightly off after migration, check the spacing utilities first.
           </p>
 
-          <h2>Migration Strategy: Do It Separately</h2>
+          <h2>Migration Strategy: Big-Bang, But Structured</h2>
           <p>
-            The single most important piece of advice: <strong>don't migrate Vue and Vuetify at the same time</strong>. Migrate Vue 2 to Vue 3 first using the <code>@vue/compat</code> compatibility build, get that stable, then tackle Vuetify 2 to Vuetify 3 as a separate phase.
+            Here's the reality with Vuetify: <strong>you can't migrate Vue and Vuetify separately</strong>. Vuetify 2 doesn't work with Vue 3, and <code>@vue/compat</code> doesn't help here — there's no bridge version. Vue 3 and Vuetify 3 have to land together, which means a long-running branch and a dedicated validation phase before merging.
           </p>
           <p>
-            When you do migrate Vuetify, work through it component by component, not file by file. Migrate all <code>v-btn</code> instances across the entire codebase in one pass. Then all <code>v-data-table</code> instances. Then all dialogs and menus. This approach lets you build muscle memory for each component's changes and catch patterns that a file-by-file approach would miss.
+            That said, the work on that branch should still be structured. Work through it component type by component type, not file by file. Migrate all <code>v-btn</code> instances across the entire codebase in one pass. Then all <code>v-data-table</code> instances. Then all dialogs and menus. This approach lets you build muscle memory for each component's changes and catch patterns that a file-by-file approach would miss.
           </p>
           <p>
             Here's the order I'd recommend:

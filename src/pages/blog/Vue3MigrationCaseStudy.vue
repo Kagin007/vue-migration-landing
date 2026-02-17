@@ -72,7 +72,7 @@ useHead({
     <article class="blog-post section">
       <div class="container blog-container">
         <header class="blog-header">
-          <span class="section-label">Case Study</span>
+          <span class="section-label">// Case Study</span>
           <h1>Migrating a 300+ File Enterprise App from Vue 2 to Vue 3</h1>
           <div class="blog-meta">
             <span>By Adam Schulte</span>
