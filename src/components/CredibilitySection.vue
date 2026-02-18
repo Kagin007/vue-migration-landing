@@ -5,31 +5,6 @@ function scrollTo(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 }
 
-// Placeholder testimonials — replace with real testimonials when available
-const testimonials = [
-  {
-    quote: 'Adam took our messy Vue 2 codebase and delivered a clean Vue 3 migration in just two sprints. His structured approach made the whole process predictable.',
-    name: 'Sarah Chen',
-    title: 'Engineering Manager',
-    company: 'TechCorp',
-    initials: 'SC',
-  },
-  {
-    quote: 'The codebase audit alone was worth it. We had a clear picture of every risk and a ticket-by-ticket plan before any code changed. No surprises.',
-    name: 'Marcus Rivera',
-    title: 'CTO',
-    company: 'DataFlow',
-    initials: 'MR',
-  },
-  {
-    quote: 'We tried the migration ourselves and got stuck after two months. Adam came in and finished it in three weeks. Should have started there.',
-    name: 'Emily Park',
-    title: 'Lead Developer',
-    company: 'CloudBase',
-    initials: 'EP',
-  },
-]
-
 const technologies = ['Vue 3', 'Vite', 'Pinia', 'Vuetify 3', 'TypeScript', 'Nuxt 3', 'Composition API']
 </script>
 
@@ -76,23 +51,6 @@ const technologies = ['Vue 3', 'Vite', 'Pinia', 'Vuetify 3', 'TypeScript', 'Nuxt
               </svg>
               Contact Me
             </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Placeholder testimonials — replace with real client testimonials -->
-      <div class="testimonials-grid">
-        <div v-for="t in testimonials" :key="t.name" class="testimonial-card">
-          <svg class="quote-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-          </svg>
-          <p class="testimonial-quote">{{ t.quote }}</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">{{ t.initials }}</div>
-            <div>
-              <span class="testimonial-name">{{ t.name }}</span>
-              <span class="testimonial-role">{{ t.title }}, {{ t.company }}</span>
-            </div>
           </div>
         </div>
       </div>
@@ -242,69 +200,6 @@ const technologies = ['Vue 3', 'Vite', 'Pinia', 'Vuetify 3', 'TypeScript', 'Nuxt
   font-weight: 600;
 }
 
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-bottom: 32px;
-}
-
-.testimonial-card {
-  padding: 28px;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.quote-icon {
-  color: var(--accent);
-  opacity: 0.4;
-  width: 20px;
-  height: 20px;
-}
-
-.testimonial-quote {
-  font-size: 0.9rem;
-  line-height: 1.7;
-  flex: 1;
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.testimonial-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--accent-subtle);
-  color: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  font-weight: 700;
-  flex-shrink: 0;
-}
-
-.testimonial-name {
-  display: block;
-  font-size: 0.87rem;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.testimonial-role {
-  display: block;
-  font-size: 0.8rem;
-  color: var(--text-tertiary);
-}
-
 .technologies-strip {
   display: flex;
   flex-wrap: wrap;
@@ -329,12 +224,6 @@ const technologies = ['Vue 3', 'Vite', 'Pinia', 'Vuetify 3', 'TypeScript', 'Nuxt
     align-items: center;
   }
 
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
 @media (max-width: 375px) {
@@ -353,8 +242,5 @@ const technologies = ['Vue 3', 'Vite', 'Pinia', 'Vuetify 3', 'TypeScript', 'Nuxt
     justify-content: center;
   }
 
-  .testimonial-card {
-    padding: 20px;
-  }
 }
 </style>
