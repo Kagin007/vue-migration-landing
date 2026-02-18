@@ -13,13 +13,13 @@ function play() {
   <section class="video-section reveal" aria-labelledby="video-heading">
     <div class="container">
       <div class="video-wrapper">
-        <h2 id="video-heading" class="video-title">See How It <span class="text-gradient">Works</span></h2>
+        <h2 id="video-heading" class="video-title">Still on Vue 2? <span class="text-gradient">Here's the Plan</span></h2>
 
         <div class="video-player">
           <div v-if="!playing" class="video-facade" @click="play" role="button" tabindex="0" aria-label="Play video" @keydown.enter="play">
             <img
               :src="`https://img.youtube.com/vi/${VIDEO_ID}/maxresdefault.jpg`"
-              :alt="'Video thumbnail: how I migrate production Vue 2 apps to Vue 3'"
+              :alt="'Video: why Vue 2 end of life matters and how I help teams migrate to Vue 3'"
               class="video-thumbnail"
               loading="lazy"
             />
@@ -32,7 +32,7 @@ function play() {
           <iframe
             v-else
             :src="`https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1&rel=0`"
-            title="Vue 2 to Vue 3 migration walkthrough"
+            title="Why Vue 2 end of life matters and how I help teams migrate to Vue 3"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
@@ -40,7 +40,7 @@ function play() {
         </div>
 
         <p class="video-caption">
-          Full walkthrough: how I migrate production Vue 2 apps to Vue 3 in weeks, not months.
+          2 minutes — the problem, the process, and how to get started.
         </p>
       </div>
     </div>
