@@ -17,6 +17,7 @@ function scrollTo(id) {
 <template>
   <section id="hero" class="hero">
     <div class="hero-bg">
+      <div class="hero-banner"></div>
       <div class="hero-grid"></div>
       <div class="hero-glow"></div>
     </div>
@@ -90,6 +91,17 @@ function scrollTo(id) {
   position: absolute;
   inset: 0;
   pointer-events: none;
+}
+
+.hero-banner {
+  position: absolute;
+  inset: 0;
+  background: url('/hero-banner.webp') center/cover no-repeat;
+  opacity: 0;
+}
+
+:global([data-theme='dark']) .hero-banner {
+  opacity: 0.45;
 }
 
 .hero-grid {
