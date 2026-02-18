@@ -1,5 +1,6 @@
 <script setup>
 import profilePic from '../assets/adam_profile_pic.jpeg'
+import logo from '../assets/vue-migration-logo.svg'
 
 function scrollTo(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -36,7 +37,8 @@ const technologies = ['Vue 3', 'Vite', 'Pinia', 'Vuetify 3', 'TypeScript', 'Nuxt
 <template>
   <section id="credibility" class="section" aria-labelledby="credibility-heading">
     <div class="container">
-      <div>
+      <div class="section-header">
+        <img :src="logo" alt="Vue Migration Consulting logo" class="section-logo" />
         <span class="section-label">// About & Proof</span>
         <h2 id="credibility-heading" class="section-title">Your Vue Migration<br><span class="text-gradient">Consultant</span></h2>
       </div>
@@ -153,6 +155,17 @@ const technologies = ['Vue 3', 'Vite', 'Pinia', 'Vuetify 3', 'TypeScript', 'Nuxt
 </template>
 
 <style scoped>
+.section-header {
+  text-align: center;
+}
+
+.section-logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  border-radius: 16px;
+}
+
 .about-card {
   max-width: 720px;
   margin: 0 auto 32px;
