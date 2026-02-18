@@ -8,6 +8,8 @@ import ApproachSection from '../components/ApproachSection.vue'
 import AssessmentSection from '../components/AssessmentSection.vue'
 import PricingSection from '../components/PricingSection.vue'
 import CredibilitySection from '../components/CredibilitySection.vue'
+import TestimonialSection from '../components/TestimonialSection.vue'
+import BlogSection from '../components/BlogSection.vue'
 import FaqSection from '../components/FaqSection.vue'
 import ContactSection from '../components/ContactSection.vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
@@ -158,11 +160,13 @@ useHead({
     <HeroSection />
     <VideoEmbed />
     <CaseStudyStats />
+    <TestimonialSection />
     <ProblemSection />
     <ApproachSection />
     <AssessmentSection />
     <PricingSection />
     <CredibilitySection />
+    <BlogSection />
     <FaqSection />
     <ContactSection />
   </main>
