@@ -133,7 +133,7 @@ function scrollTo(id) {
         </svg>
         Book a Free Intro Call
       </button>
-      <a href="#pricing" class="btn btn-secondary btn-lg" @click.prevent="scrollTo('pricing')">
+      <a href="#contact" class="btn btn-secondary btn-lg" @click.prevent="scrollTo('contact')">
         Order a Codebase Audit
       </a>
     </div>
