@@ -61,9 +61,9 @@ function scrollToTop() {
   transform: translateY(12px);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 900px) {
   .scroll-to-top {
-    bottom: 20px;
+    bottom: 80px;
     right: 20px;
   }
 }

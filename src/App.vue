@@ -2,6 +2,7 @@
 import NavBar from './components/NavBar.vue'
 import FooterSection from './components/FooterSection.vue'
 import ScrollToTop from './components/ScrollToTop.vue'
+import StickyMobileCTA from './components/StickyMobileCTA.vue'
 </script>
 
 <template>
@@ -9,6 +10,7 @@ import ScrollToTop from './components/ScrollToTop.vue'
   <router-view />
   <FooterSection />
   <ScrollToTop />
+  <StickyMobileCTA />
 </template>
 
 <style>
