@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
+import logo from '../assets/vue-migration-logo.svg'
 import { useDarkMode } from '../composables/useDarkMode'
 import { useActiveSection } from '../composables/useActiveSection'
 
@@ -43,12 +44,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   <header class="navbar" :class="{ scrolled, 'mobile-open': mobileOpen }">
     <div class="container navbar-inner">
       <router-link to="/" class="navbar-brand">
-        <svg class="vue-logo" viewBox="0 0 261.76 226.69" width="28" height="24" aria-hidden="true">
-          <g transform="matrix(1.3333 0 0 -1.3333 -76.311 313.34)">
-            <path d="m178.04 235.01-22.056-38.208-22.056 38.208h-40.836l62.892-108.96 62.892 108.96z" fill="#42b883"/>
-            <path d="m178.04 235.01-22.056-38.208-22.056 38.208h-15.832l37.888-65.64 37.888 65.64z" fill="var(--accent-secondary)"/>
-          </g>
-        </svg>
+        <img :src="logo" alt="Vue Migration Consulting" class="navbar-logo" />
         <span class="brand-text">Vue Migration<span class="brand-dot">.</span></span>
       </router-link>
 
@@ -130,6 +126,12 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 
 .navbar-brand:hover {
   color: var(--text-primary);
+}
+
+.navbar-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
 }
 
 .brand-dot {
