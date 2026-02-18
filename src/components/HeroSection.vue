@@ -96,12 +96,13 @@ function scrollTo(id) {
 .hero-banner {
   position: absolute;
   inset: 0;
-  background: url('/hero-banner.webp') center/cover no-repeat;
-  opacity: 0;
+  background: url('/hero-banner-light.webp') center/cover no-repeat;
+  opacity: 0.5;
 }
 
 :global([data-theme='dark']) .hero-banner {
-  opacity: 0.45;
+  background-image: url('/hero-banner.webp');
+  opacity: 0.2;
 }
 
 .hero-grid {
