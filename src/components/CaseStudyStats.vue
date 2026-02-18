@@ -23,7 +23,7 @@ const { count: sprintsCount, elementRef: sprintsRef } = useCountUp(2, 1200)
           <span class="stat-label">Sprints to production</span>
         </div>
         <div class="stat-item">
-          <span class="stat-value mono">Zero</span>
+          <span class="stat-value mono stat-value--text">Zero</span>
           <span class="stat-label">Downtime</span>
         </div>
         <div class="stat-item">
