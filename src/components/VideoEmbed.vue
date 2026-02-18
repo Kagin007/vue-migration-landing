@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 
-const VIDEO_ID = 'dQw4w9WgXcQ' // Placeholder — swap with actual video ID
+const VIDEO_ID = 'uWn5zjGAPS0'
 const playing = ref(false)
 
 function play() {
