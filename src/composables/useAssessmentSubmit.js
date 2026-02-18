@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 
-const WEBHOOK_URL = 'https://hooks.example.com/migration-assessment'
+const WEBHOOK_URL = 'https://formspree.io/f/mgolkkvg'
 
 /**
  * Fire-and-forget submission of assessment data to a webhook.
