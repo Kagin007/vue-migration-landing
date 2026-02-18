@@ -1,8 +1,10 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useCalendly } from '../composables/useCalendly'
+import { useDarkMode } from '../composables/useDarkMode'
 
 const { openCalendly } = useCalendly()
+const { isDark } = useDarkMode()
 
 const loaded = ref(false)
 onMounted(() => {
@@ -17,7 +19,8 @@ function scrollTo(id) {
 <template>
   <section id="hero" class="hero">
     <div class="hero-bg">
-      <div class="hero-banner"></div>
+      <div v-if="isDark" class="hero-banner hero-banner--dark"></div>
+      <div v-else class="hero-banner hero-banner--light"></div>
       <div class="hero-grid"></div>
       <div class="hero-glow"></div>
     </div>
@@ -96,13 +99,19 @@ function scrollTo(id) {
 .hero-banner {
   position: absolute;
   inset: 0;
-  background: url('/hero-banner-light.webp') center/cover no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-banner--light {
+  background-image: url('/hero-banner-light.webp');
   opacity: 0.5;
 }
 
-:global([data-theme='dark']) .hero-banner {
+.hero-banner--dark {
   background-image: url('/hero-banner.webp');
-  opacity: 0.5;
+  opacity: 0.3;
   mix-blend-mode: screen;
 }
 
