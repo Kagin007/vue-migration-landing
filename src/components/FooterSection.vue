@@ -18,11 +18,19 @@ function scrollTo(id) {
     <div class="container">
       <div class="footer-bottom">
         <div class="footer-brand">
-          <svg class="vue-logo" viewBox="0 0 261.76 226.69" width="24" height="20" aria-hidden="true">
-            <g transform="matrix(1.3333 0 0 -1.3333 -76.311 313.34)">
-              <path d="m178.04 235.01-22.056-38.208-22.056 38.208h-40.836l62.892-108.96 62.892 108.96z" fill="#42b883"/>
-              <path d="m178.04 235.01-22.056-38.208-22.056 38.208h-15.832l37.888-65.64 37.888 65.64z" fill="var(--accent-secondary)"/>
-            </g>
+          <svg class="footer-logo" viewBox="0 0 400 400" width="24" height="24" aria-hidden="true">
+            <defs>
+              <linearGradient id="footerMainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#42b883" />
+                <stop offset="100%" style="stop-color:#3ba676" />
+              </linearGradient>
+              <linearGradient id="footerDarkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#3d5a80" />
+                <stop offset="100%" style="stop-color:#34506e" />
+              </linearGradient>
+            </defs>
+            <path d="M160,310 L55,165 L115,165 L160,240 L285,65 L345,65 Z" fill="url(#footerDarkGrad)"/>
+            <path d="M160,240 L110,160 L138,160 L160,198 L265,80 L293,80 Z" fill="url(#footerMainGrad)"/>
           </svg>
           <span>Vue Migration Consulting</span>
         </div>

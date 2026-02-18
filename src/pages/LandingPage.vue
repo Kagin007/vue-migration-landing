@@ -64,7 +64,7 @@ useHead({
               "name": "Vue Migration Audit",
               "description": "Full codebase assessment with detailed migration plan and ticket breakdown.",
               "priceCurrency": "CAD",
-              "price": "1000-1500"
+              "price": "1500-2500"
             },
             {
               "@type": "Offer",
@@ -78,7 +78,7 @@ useHead({
               "name": "Vue Full Migration",
               "description": "End-to-end migration execution from audit through production deployment.",
               "priceCurrency": "CAD",
-              "price": "5000-50000"
+              "price": "7500-60000"
             }
           ]
         }
