@@ -3,6 +3,8 @@ import { useHead } from '@unhead/vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
+import BlogCTA from '../../components/blog/BlogCTA.vue'
+import BlogStickyBanner from '../../components/blog/BlogStickyBanner.vue'
 
 function scrollTo(id) {
   router.push({ path: '/', hash: `#${id}` })
@@ -196,6 +198,8 @@ defineOptions({ inheritAttrs: false })
             The gotcha is that the old hook names don't throw errors — the directive just never fires. Your <code>inserted</code> hook silently does nothing because Vue 3 doesn't recognize it. If you have custom directives for things like focus management, click-outside detection, or intersection observers, they'll all break without any console output.
           </p>
 
+          <BlogCTA variant="assessment" />
+
           <h2>6. Async Components Need defineAsyncComponent</h2>
           <p>
             In Vue 2, you could define an async component by returning a promise from a function:
@@ -325,24 +329,10 @@ onMounted(() => {
           </ul>
         </section>
 
-        <section class="blog-cta">
-          <div class="cta-card">
-            <h2>Need Help With Your Migration?</h2>
-            <p>
-              I've worked through all of these gotchas on production applications. Whether you need a codebase audit to identify risks or hands-on help executing the migration, I can help you avoid the surprises.
-            </p>
-            <div class="cta-actions">
-              <a href="#pricing" class="btn btn-primary" @click.prevent="scrollTo('pricing')">
-                View Migration Services
-              </a>
-              <a href="#contact" class="btn btn-secondary" @click.prevent="scrollTo('contact')">
-                Get in Touch
-              </a>
-            </div>
-          </div>
-        </section>
+        <BlogCTA variant="contact" />
       </div>
     </article>
+    <BlogStickyBanner />
   </main>
 </template>
 

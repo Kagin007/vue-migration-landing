@@ -1,5 +1,8 @@
 <script setup>
 import { ref, onMounted } from 'vue'
+import { useCalendly } from '../composables/useCalendly'
+
+const { openCalendly } = useCalendly()
 
 const loaded = ref(false)
 onMounted(() => {
@@ -45,6 +48,7 @@ function scrollTo(id) {
             <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
           </svg>
         </a>
+        <button class="btn btn-ghost btn-lg" @click="openCalendly">Book a Free Call</button>
       </div>
 
       <div class="hero-proof">

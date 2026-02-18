@@ -30,7 +30,7 @@ function scrollTo(id) {
         <div class="footer-links">
           <a href="#contact" @click.prevent="scrollTo('contact')">Contact</a>
           <span class="footer-divider">|</span>
-          <a href="https://www.linkedin.com/in/adam-schulte-a279ab10/">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/adam-schulte-a279ab10/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <span class="footer-divider">|</span>
           <a href="https://github.com/Kagin007">GitHub</a>
         </div>

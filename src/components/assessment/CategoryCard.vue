@@ -5,6 +5,7 @@ defineProps({
   score: { type: Number, required: true },
   maxScore: { type: Number, required: true },
   percentage: { type: Number, required: true },
+  explanation: { type: String, default: '' },
   index: { type: Number, default: 0 },
 })
 </script>
@@ -27,6 +28,7 @@ defineProps({
         }"
       ></div>
     </div>
+    <p v-if="explanation" class="category-explanation">{{ explanation }}</p>
   </div>
 </template>
 
@@ -96,5 +98,12 @@ defineProps({
 
 .category-bar-fill.high {
   background: #ef4444;
+}
+
+.category-explanation {
+  font-size: 0.82rem;
+  color: var(--text-tertiary);
+  line-height: 1.5;
+  margin-top: 10px;
 }
 </style>

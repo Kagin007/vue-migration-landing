@@ -83,6 +83,7 @@ const steps = [
       'Vuetify 2 → Vuetify 3 component framework upgrade',
       'Vuex → Pinia state management migration',
       'Vue CLI → Vite build tooling upgrade',
+      'Nuxt 2 → Nuxt 3 full-framework migration',
       'TypeScript adoption and type safety improvements',
     ],
   },

@@ -4,6 +4,9 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
+import BlogCTA from '../../components/blog/BlogCTA.vue'
+import BlogStickyBanner from '../../components/blog/BlogStickyBanner.vue'
+
 function scrollTo(id) {
   router.push({ path: '/', hash: `#${id}` })
 }
@@ -270,6 +273,8 @@ export default createVuetify({
             Some SASS variables have no direct equivalent in Vuetify 3. For those, you'll need to write custom CSS targeting Vuetify's class names or use the <code>defaults</code> configuration to set prop defaults globally.
           </p>
 
+          <BlogCTA variant="assessment" />
+
           <h2>Form Inputs: Prop and Event Renames</h2>
           <p>
             Nearly every form component has renamed props or changed behavior:
@@ -358,24 +363,10 @@ export default createVuetify({
           </p>
         </section>
 
-        <section class="blog-cta">
-          <div class="cta-card">
-            <h2>Need Help With Your Vuetify Migration?</h2>
-            <p>
-              I've migrated Vuetify 2 to Vuetify 3 on a 300+ file production application. I know where the time sinks are and how to avoid them. Whether you need an audit of what's involved or hands-on execution, I can help.
-            </p>
-            <div class="cta-actions">
-              <a href="#pricing" class="btn btn-primary" @click.prevent="scrollTo('pricing')">
-                View Migration Services
-              </a>
-              <a href="#contact" class="btn btn-secondary" @click.prevent="scrollTo('contact')">
-                Get in Touch
-              </a>
-            </div>
-          </div>
-        </section>
+        <BlogCTA variant="contact" />
       </div>
     </article>
+    <BlogStickyBanner />
   </main>
 </template>
 

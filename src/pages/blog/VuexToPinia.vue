@@ -4,6 +4,9 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
+import BlogCTA from '../../components/blog/BlogCTA.vue'
+import BlogStickyBanner from '../../components/blog/BlogStickyBanner.vue'
+
 function scrollTo(id) {
   router.push({ path: '/', hash: `#${id}` })
 }
@@ -308,6 +311,8 @@ const { fetchUsers } = usersStore</code></pre>
             Another approach is to skip destructuring entirely and access everything through the store instance. <code>usersStore.loading</code> stays reactive because you're accessing it through the reactive proxy. This is more verbose in templates but avoids the <code>storeToRefs</code> question altogether.
           </p>
 
+          <BlogCTA variant="assessment" />
+
           <h2>Handling Cross-Store Dependencies</h2>
           <p>
             In Vuex, modules that need to interact with other modules use <code>rootState</code>, <code>rootGetters</code>, or dispatch actions with <code>{ root: true }</code>. This is one of the uglier parts of Vuex — the string-based cross-module communication that's impossible to trace through static analysis.
@@ -386,24 +391,10 @@ export const useOrdersStore = defineStore('orders', () => {
           </p>
         </section>
 
-        <section class="blog-cta">
-          <div class="cta-card">
-            <h2>Planning a Vuex to Pinia Migration?</h2>
-            <p>
-              I've migrated production Vuex stores with 20+ modules to Pinia as part of full Vue 3 migrations. If you need help scoping the work or executing it, I'd be happy to chat.
-            </p>
-            <div class="cta-actions">
-              <a href="#pricing" class="btn btn-primary" @click.prevent="scrollTo('pricing')">
-                View Migration Services
-              </a>
-              <a href="#contact" class="btn btn-secondary" @click.prevent="scrollTo('contact')">
-                Get in Touch
-              </a>
-            </div>
-          </div>
-        </section>
+        <BlogCTA variant="contact" />
       </div>
     </article>
+    <BlogStickyBanner />
   </main>
 </template>
 

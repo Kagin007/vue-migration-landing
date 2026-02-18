@@ -1,7 +1,10 @@
 <script setup>
-import { ref } from 'vue'
+import { computed } from 'vue'
+import { useCalendly } from '../../composables/useCalendly'
 import ScoreGauge from './ScoreGauge.vue'
 import CategoryCard from './CategoryCard.vue'
+
+const { openCalendly } = useCalendly()
 
 const props = defineProps({
   totalScore: { type: Number, required: true },
@@ -14,34 +17,56 @@ const props = defineProps({
   timelineEstimate: { type: String, required: true },
   recommendedApproach: { type: String, required: true },
   answers: { type: Object, required: true },
-  submit: { type: Function, required: true },
-  submitStatus: { type: String, required: true },
 })
 
 const emit = defineEmits(['reset'])
 
-const email = ref('')
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-const emailValid = ref(true)
+const categoryExplanations = computed(() => {
+  const explanations = {}
+  const a = props.answers
 
-function sendResults() {
-  const trimmed = email.value.trim()
-  if (!EMAIL_RE.test(trimmed)) {
-    emailValid.value = false
-    return
+  // State Management
+  if (a.vuex === 'namespaced') {
+    explanations.state_management = 'Namespaced Vuex modules will each need to become separate Pinia stores with refactored access patterns.'
+  } else if (a.vuex === 'simple') {
+    explanations.state_management = 'A simple Vuex store maps cleanly to a single Pinia store — this is one of the easier parts of the migration.'
   }
-  emailValid.value = true
-  props.submit({
-    answers: props.answers,
-    contactInfo: { email: trimmed },
-    scores: {
-      totalScore: props.totalScore,
-      tier: props.tier,
-      tierLabel: props.tierLabel,
-      timelineEstimate: props.timelineEstimate,
-      categoryScores: props.categoryScores,
-    },
-  })
+
+  // Template & Component Patterns
+  const patterns = a.legacy_patterns
+  if (Array.isArray(patterns) && patterns.length > 0 && !patterns.includes('none')) {
+    const parts = []
+    if (patterns.includes('mixins')) parts.push('mixins need refactoring into composables')
+    if (patterns.includes('filters')) parts.push('filters must be replaced with computed properties or helpers')
+    if (patterns.includes('event_bus')) parts.push('the event bus needs to be replaced with provide/inject or a store')
+    if (parts.length) {
+      explanations.template_patterns = parts.charAt ? parts : parts.join(', ').replace(/, ([^,]*)$/, ', and $1') + '.'
+      explanations.template_patterns = parts.join(', ').replace(/, ([^,]*)$/, ', and $1')
+      explanations.template_patterns = explanations.template_patterns.charAt(0).toUpperCase() + explanations.template_patterns.slice(1) + '.'
+    }
+  }
+
+  // Build Tooling
+  if (a.build_tooling === 'nuxt2') {
+    explanations.build_tooling = 'Nuxt 2 to Nuxt 3 is a significant framework migration on top of the Vue upgrade — server engine, file conventions, and plugins all change.'
+  } else if (a.build_tooling === 'webpack') {
+    explanations.build_tooling = 'Custom Webpack configurations will need to be mapped to Vite equivalents, including any custom plugins and loaders.'
+  } else if (a.build_tooling === 'vue_cli') {
+    explanations.build_tooling = 'Vue CLI to Vite is a well-documented upgrade path with established migration tooling.'
+  }
+
+  // Testing
+  if (a.testing === 'none') {
+    explanations.testing = 'Without automated tests, building at least smoke tests before migrating will significantly reduce risk.'
+  } else if (a.testing === 'some') {
+    explanations.testing = 'Existing tests will need updates for Vue 3 test utils, and gaps should be filled before migrating critical paths.'
+  }
+
+  return explanations
+})
+
+function scrollTo(id) {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 }
 </script>
 
@@ -73,6 +98,7 @@ function sendResults() {
           :score="cat.score"
           :maxScore="cat.maxScore"
           :percentage="cat.percentage"
+          :explanation="categoryExplanations[cat.id]"
           :index="i"
         />
       </div>
@@ -101,42 +127,15 @@ function sendResults() {
 
     <!-- CTAs -->
     <div class="results-ctas">
-      <a href="https://calendly.com" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+      <button class="btn btn-primary btn-lg" @click="openCalendly">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
         Book a Free Intro Call
+      </button>
+      <a href="#pricing" class="btn btn-secondary btn-lg" @click.prevent="scrollTo('pricing')">
+        Order a Codebase Audit
       </a>
-      <a href="#contact" class="btn btn-secondary btn-lg">
-        Order a Detailed Codebase Audit — $1,000–$1,500 CAD
-      </a>
-    </div>
-
-    <!-- Optional email capture -->
-    <div class="email-capture">
-      <template v-if="submitStatus === 'sent'">
-        <p class="email-success">Results sent! Check your inbox.</p>
-      </template>
-      <template v-else>
-        <p class="email-prompt">Want these results emailed to you?</p>
-        <form class="email-form" @submit.prevent="sendResults">
-          <input
-            v-model="email"
-            type="email"
-            placeholder="you@company.com"
-            class="email-input"
-            :class="{ 'email-input--error': !emailValid }"
-            @input="emailValid = true"
-          />
-          <button
-            type="submit"
-            class="btn btn-primary btn-send"
-            :disabled="submitStatus === 'sending'"
-          >
-            {{ submitStatus === 'sending' ? 'Sending...' : 'Send Results' }}
-          </button>
-        </form>
-        <p v-if="!emailValid" class="email-error">Please enter a valid email address.</p>
-        <p v-if="submitStatus === 'error'" class="email-error">Something went wrong. Please try again.</p>
-        <p class="email-disclaimer">No spam, ever. Just your results.</p>
-      </template>
     </div>
 
     <button class="retake-link" @click="emit('reset')">
@@ -252,81 +251,6 @@ function sendResults() {
   text-align: center;
 }
 
-.email-capture {
-  text-align: center;
-  padding: 24px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-}
-
-.email-prompt {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 12px;
-}
-
-.email-form {
-  display: flex;
-  gap: 8px;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.email-input {
-  flex: 1;
-  padding: 12px 14px;
-  background: var(--bg-secondary);
-  border: 2px solid var(--border);
-  border-radius: 10px;
-  font-family: inherit;
-  font-size: 0.95rem;
-  color: var(--text-primary);
-  outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.email-input::placeholder {
-  color: var(--text-tertiary);
-}
-
-.email-input:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-subtle);
-}
-
-.email-input--error {
-  border-color: #ef4444;
-}
-
-.email-input--error:focus {
-  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
-}
-
-.btn-send {
-  white-space: nowrap;
-  padding: 12px 20px;
-}
-
-.email-error {
-  font-size: 0.82rem;
-  color: #ef4444;
-  margin-top: 8px;
-}
-
-.email-disclaimer {
-  font-size: 0.8rem;
-  color: var(--text-tertiary);
-  margin-top: 8px;
-}
-
-.email-success {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--accent);
-}
-
 .retake-link {
   background: none;
   border: none;
@@ -346,10 +270,6 @@ function sendResults() {
 @media (max-width: 640px) {
   .category-grid {
     grid-template-columns: 1fr;
-  }
-
-  .email-form {
-    flex-direction: column;
   }
 }
 </style>

@@ -25,6 +25,25 @@ const tiers = ref([
     ctaLink: '#contact',
   },
   {
+    name: 'Guided Migration',
+    price: '$175 – $225',
+    unit: 'CAD, per hour',
+    description: 'Your team executes the migration with my expert guidance. I provide the roadmap, review every PR, and unblock technical challenges so your developers build Vue 3 skills while shipping the migration.',
+    popular: false,
+    features: [
+      'Everything in the Migration Audit',
+      'Weekly strategy and planning sessions',
+      'Code reviews on all migration PRs',
+      'Architecture guidance for Composition API patterns',
+      'Pinia state management design review',
+      'Vite configuration and build optimization support',
+      'On-demand async support via Slack or email',
+      'Knowledge transfer — your team owns the result',
+    ],
+    cta: 'Get in Touch',
+    ctaLink: '#contact',
+  },
+  {
     name: 'Full Migration',
     price: '$5,000 – $50,000',
     unit: 'CAD, project-based',
@@ -52,7 +71,7 @@ const tiers = ref([
         <span class="section-label">// Services & Pricing</span>
         <h2 id="pricing-heading" class="section-title" style="margin-left: auto; margin-right: auto;">Vue Migration Services & Pricing.<br><span class="text-gradient">Right-sized for your team.</span></h2>
         <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">
-          Start with an audit to scope the work, or go straight to a full migration — either way, you get the same developer from start to finish.
+          Start with an audit to scope the work, get guided support for your team, or go straight to a full migration — either way, you get the same developer from start to finish.
         </p>
       </div>
 
@@ -102,7 +121,7 @@ const tiers = ref([
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-bottom: 32px;
   align-items: start;
@@ -198,7 +217,7 @@ const tiers = ref([
   color: var(--text-tertiary);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .pricing-grid {
     grid-template-columns: 1fr;
     max-width: 480px;

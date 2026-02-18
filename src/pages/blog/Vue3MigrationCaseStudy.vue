@@ -4,6 +4,9 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
+import BlogCTA from '../../components/blog/BlogCTA.vue'
+import BlogStickyBanner from '../../components/blog/BlogStickyBanner.vue'
+
 function scrollTo(id) {
   router.push({ path: '/', hash: `#${id}` })
 }
@@ -160,6 +163,8 @@ useHead({
             In hindsight, I'd move this phase to the beginning next time. The faster feedback loop from Vite would have made the rest of the migration more pleasant. It's independent of the Vue version, so there's no reason it can't go first.
           </p>
 
+          <BlogCTA variant="assessment" />
+
           <h2>What Went Wrong</h2>
           <p>
             No migration this size goes perfectly. Here's what caused the most unexpected work:
@@ -226,24 +231,10 @@ useHead({
           </ul>
         </section>
 
-        <section class="blog-cta">
-          <div class="cta-card">
-            <h2>Facing the Same Migration?</h2>
-            <p>
-              I've done this before and I can do it for your team. Whether you need an audit to understand the scope or want me to execute the full migration, the methodology is proven and the results are measurable.
-            </p>
-            <div class="cta-actions">
-              <a href="#pricing" class="btn btn-primary" @click.prevent="scrollTo('pricing')">
-                View Migration Services
-              </a>
-              <a href="#contact" class="btn btn-secondary" @click.prevent="scrollTo('contact')">
-                Get in Touch
-              </a>
-            </div>
-          </div>
-        </section>
+        <BlogCTA variant="contact" />
       </div>
     </article>
+    <BlogStickyBanner />
   </main>
 </template>
 

@@ -1,6 +1,8 @@
 <script setup>
 import { useHead } from '@unhead/vue'
 import HeroSection from '../components/HeroSection.vue'
+import VideoEmbed from '../components/VideoEmbed.vue'
+import CaseStudyStats from '../components/CaseStudyStats.vue'
 import ProblemSection from '../components/ProblemSection.vue'
 import ApproachSection from '../components/ApproachSection.vue'
 import AssessmentSection from '../components/AssessmentSection.vue'
@@ -13,22 +15,22 @@ import { useScrollReveal } from '../composables/useScrollReveal'
 useScrollReveal()
 
 useHead({
-  title: 'Vue 2 to Vue 3 Migration Services | Hire a Migration Expert',
+  title: 'Vue 2 to Vue 3 Migration Services | Expert Consultant — vuemigration.dev',
   meta: [
-    { name: 'description', content: 'Hire an experienced Vue migration developer for your Vue 2 to Vue 3 migration. Migration Audit or Full Migration — proven on a 300+ file enterprise application.' },
+    { name: 'description', content: 'Expert Vue 2 to Vue 3 migration consulting. Vuex to Pinia, Vue CLI to Vite, Vuetify 2 to Vuetify 3. Structured methodology, proven on 300+ file enterprise applications. Based in Canada.' },
     { name: 'author', content: 'Adam Schulte' },
     { property: 'og:type', content: 'website' },
     { property: 'og:url', content: 'https://www.vuemigration.dev/' },
-    { property: 'og:title', content: 'Vue 2 to Vue 3 Migration Services | Hire a Migration Expert' },
-    { property: 'og:description', content: 'Hire an experienced Vue migration developer for your Vue 2 to Vue 3 migration. Migration Audit or Full Migration — proven on a 300+ file enterprise application.' },
+    { property: 'og:title', content: 'Vue 2 to Vue 3 Migration Services | Expert Consultant — vuemigration.dev' },
+    { property: 'og:description', content: 'Expert Vue 2 to Vue 3 migration consulting. Vuex to Pinia, Vue CLI to Vite, Vuetify 2 to Vuetify 3. Structured methodology, proven on 300+ file enterprise applications. Based in Canada.' },
     { property: 'og:image', content: 'https://www.vuemigration.dev/og-image.png' },
     { property: 'og:image:width', content: '1200' },
     { property: 'og:image:height', content: '630' },
     { property: 'og:image:type', content: 'image/png' },
     { property: 'og:site_name', content: 'Vue Migration Consulting' },
     { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:title', content: 'Vue 2 to Vue 3 Migration Services | Hire a Migration Expert' },
-    { name: 'twitter:description', content: 'Hire an experienced Vue migration developer for your Vue 2 to Vue 3 migration. Migration Audit or Full Migration — proven on a 300+ file enterprise application.' },
+    { name: 'twitter:title', content: 'Vue 2 to Vue 3 Migration Services | Expert Consultant — vuemigration.dev' },
+    { name: 'twitter:description', content: 'Expert Vue 2 to Vue 3 migration consulting. Vuex to Pinia, Vue CLI to Vite, Vuetify 2 to Vuetify 3. Structured methodology, proven on 300+ file enterprise applications. Based in Canada.' },
     { name: 'twitter:image', content: 'https://www.vuemigration.dev/og-image.png' },
   ],
   link: [
@@ -43,10 +45,10 @@ useHead({
         "name": "Vue Migration Consulting",
         "url": "https://www.vuemigration.dev",
         "image": "https://www.vuemigration.dev/og-image.png",
-        "description": "Expert Vue 2 to Vue 3 migration services. Structured methodology proven on production enterprise applications.",
+        "description": "Expert Vue 2 to Vue 3 migration consulting. Vuex to Pinia, Vue CLI to Vite, Vuetify 2 to Vuetify 3. Structured methodology, proven on 300+ file enterprise applications. Based in Canada.",
         "areaServed": "Worldwide",
         "serviceType": "Vue.js Migration Consulting",
-        "knowsAbout": ["Vue.js", "Vue 2 to Vue 3 Migration", "JavaScript", "TypeScript", "Vuetify", "Pinia", "Vite"],
+        "knowsAbout": ["Vue.js", "Vue 2 to Vue 3 Migration", "JavaScript", "TypeScript", "Vuetify", "Pinia", "Vite", "Nuxt 3", "Nuxt 2 to Nuxt 3 Migration"],
         "provider": {
           "@type": "Person",
           "name": "Adam Schulte",
@@ -63,6 +65,13 @@ useHead({
               "description": "Full codebase assessment with detailed migration plan and ticket breakdown.",
               "priceCurrency": "CAD",
               "price": "1000-1500"
+            },
+            {
+              "@type": "Offer",
+              "name": "Vue Guided Migration",
+              "description": "Expert guidance while your team executes — roadmap, PR reviews, architecture advice, and async support.",
+              "priceCurrency": "CAD",
+              "price": "175-225"
             },
             {
               "@type": "Offer",
@@ -128,6 +137,14 @@ useHead({
               "@type": "Answer",
               "text": "Vue 2 reached end of life on December 31, 2023, which means it no longer receives security patches, bug fixes, or ecosystem updates. Your application is exposed to unpatched vulnerabilities and increasingly incompatible dependencies. Migrating to Vue 3 restores active support, unlocks modern tooling like Vite and Pinia, and future-proofs your codebase."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you handle Nuxt 2 to Nuxt 3 migrations?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Nuxt 2 reached end of life in June 2024 and presents additional migration complexity on top of the core Vue 2 to Vue 3 upgrade. I handle the full Nuxt migration including server middleware, layouts, plugins, and the shift to Nitro. The same structured methodology applies — audit first, then incremental execution with zero downtime."
+            }
           }
         ]
       }),
@@ -139,6 +156,8 @@ useHead({
 <template>
   <main>
     <HeroSection />
+    <VideoEmbed />
+    <CaseStudyStats />
     <ProblemSection />
     <ApproachSection />
     <AssessmentSection />

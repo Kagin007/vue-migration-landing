@@ -8,7 +8,7 @@ import { questions } from '../data/assessmentQuestions.js'
 export function useAssessmentForm() {
   const currentStep = ref(0)
   const answers = ref({})
-  const formStatus = ref('in-progress') // 'in-progress' | 'completed'
+  const formStatus = ref('in-progress') // 'in-progress' | 'email-capture' | 'completed'
 
   const totalSteps = questions.length
   const currentQuestion = computed(() => questions[currentStep.value])
@@ -68,8 +68,16 @@ export function useAssessmentForm() {
     if (canAdvance.value && currentStep.value < totalSteps - 1) {
       currentStep.value++
     } else if (canAdvance.value && currentStep.value === totalSteps - 1) {
-      formStatus.value = 'completed'
+      formStatus.value = 'email-capture'
     }
+  }
+
+  function completeAssessment() {
+    formStatus.value = 'completed'
+  }
+
+  function goBackToQuestions() {
+    formStatus.value = 'in-progress'
   }
 
   function prevStep() {
@@ -98,5 +106,7 @@ export function useAssessmentForm() {
     nextStep,
     prevStep,
     reset,
+    completeAssessment,
+    goBackToQuestions,
   }
 }

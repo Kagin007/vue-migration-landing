@@ -219,6 +219,12 @@ main {
   background: var(--accent-subtle);
 }
 
+.btn-sm {
+  padding: 10px 16px;
+  font-size: 0.85rem;
+  min-height: 44px;
+}
+
 /* ===== Scroll Reveal Animations ===== */
 .reveal {
   opacity: 0;

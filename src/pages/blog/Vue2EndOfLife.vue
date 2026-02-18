@@ -1,6 +1,8 @@
 <script setup>
 import { useHead } from '@unhead/vue'
 import { useRouter } from 'vue-router'
+import BlogCTA from '../../components/blog/BlogCTA.vue'
+import BlogStickyBanner from '../../components/blog/BlogStickyBanner.vue'
 
 const router = useRouter()
 
@@ -128,6 +130,8 @@ useHead({
             <li><strong>Teleport, Suspense, and Fragments</strong> — Built-in features that eliminate common workarounds. No more wrapper divs. Better async component handling.</li>
           </ul>
 
+          <BlogCTA variant="assessment" />
+
           <h2>How to Plan Your Migration</h2>
           <p>
             A Vue 2 to Vue 3 migration is not a rewrite. It's a structured process that can be broken into concrete phases. For a real-world example, see how I handled a <router-link to="/blog/vue-2-to-vue-3-migration-case-study">300+ file enterprise migration</router-link>. Here's what a realistic migration path looks like:
@@ -183,24 +187,10 @@ useHead({
           </p>
         </section>
 
-        <section class="blog-cta">
-          <div class="cta-card">
-            <h2>Ready to Migrate?</h2>
-            <p>
-              I've completed a Vue 2 to Vue 3 migration on a 300+ component enterprise application. I can help you audit your codebase, plan the migration, or execute the full upgrade.
-            </p>
-            <div class="cta-actions">
-              <a href="#pricing" class="btn btn-primary" @click.prevent="scrollTo('pricing')">
-                View Migration Services
-              </a>
-              <a href="#contact" class="btn btn-secondary" @click.prevent="scrollTo('contact')">
-                Get in Touch
-              </a>
-            </div>
-          </div>
-        </section>
+        <BlogCTA variant="contact" />
       </div>
     </article>
+    <BlogStickyBanner />
   </main>
 </template>
 

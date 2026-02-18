@@ -4,6 +4,9 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
+import BlogCTA from '../../components/blog/BlogCTA.vue'
+import BlogStickyBanner from '../../components/blog/BlogStickyBanner.vue'
+
 function scrollTo(id) {
   router.push({ path: '/', hash: `#${id}` })
 }
@@ -194,6 +197,8 @@ const chart = shallowRef(new D3Chart(container))</code></pre>
             If you're storing an object that Vue doesn't need to deeply observe — third-party class instances, canvas contexts, WebSocket connections, Web Worker references — use <code>shallowRef</code>. Let Vue track the reference. Let the library manage its own state.
           </p>
 
+          <BlogCTA variant="assessment" />
+
           <h2>3. Teleport: Render Outside the Component Tree</h2>
 
           <h3>The Vue 2 problem</h3>
@@ -259,24 +264,10 @@ const showDetails = ref(false)
           </p>
         </section>
 
-        <section class="blog-cta">
-          <div class="cta-card">
-            <h2>Migrating to Vue 3?</h2>
-            <p>
-              These features aren't just nice-to-have — they solve real architectural problems that come up during migration. I can help your team adopt Vue 3's modern patterns while migrating away from Vue 2 workarounds.
-            </p>
-            <div class="cta-actions">
-              <a href="#pricing" class="btn btn-primary" @click.prevent="scrollTo('pricing')">
-                View Migration Services
-              </a>
-              <a href="#contact" class="btn btn-secondary" @click.prevent="scrollTo('contact')">
-                Get in Touch
-              </a>
-            </div>
-          </div>
-        </section>
+        <BlogCTA variant="contact" />
       </div>
     </article>
+    <BlogStickyBanner />
   </main>
 </template>
 

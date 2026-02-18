@@ -4,6 +4,9 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
+import BlogCTA from '../../components/blog/BlogCTA.vue'
+import BlogStickyBanner from '../../components/blog/BlogStickyBanner.vue'
+
 function scrollTo(id) {
   router.push({ path: '/', hash: `#${id}` })
 }
@@ -224,6 +227,8 @@ function setActiveElement(uuid) {
             Now the store holds a UUID string as the source of truth. The full element object is derived via a computed. Every consumer that only needs the UUID gets a stable primitive. Consumers that need the full object get it from the derived computed. The reactive chain is clean at the architectural level — no need for every component to independently stabilize its computeds.
           </p>
 
+          <BlogCTA variant="assessment" />
+
           <h2>Why This Matters After a Migration</h2>
           <p>
             These patterns are specific to Vue 3 migrations because they're caused by the difference between Vue 2's lazy and Vue 3's eager reactivity. Your Vue 2 code was "fast" not because it was well-optimized, but because Vue 2's reactivity system was doing less work. After migration, Vue 3 does the correct amount of work — which is sometimes more than you need.
@@ -241,24 +246,10 @@ function setActiveElement(uuid) {
           </ul>
         </section>
 
-        <section class="blog-cta">
-          <div class="cta-card">
-            <h2>Seeing Performance Issues After Your Migration?</h2>
-            <p>
-              Vue 3's reactivity model is more powerful but less forgiving. If your migrated application is slower than it should be, I can help identify and fix the patterns causing unnecessary reactive overhead.
-            </p>
-            <div class="cta-actions">
-              <a href="#pricing" class="btn btn-primary" @click.prevent="scrollTo('pricing')">
-                View Migration Services
-              </a>
-              <a href="#contact" class="btn btn-secondary" @click.prevent="scrollTo('contact')">
-                Get in Touch
-              </a>
-            </div>
-          </div>
-        </section>
+        <BlogCTA variant="contact" />
       </div>
     </article>
+    <BlogStickyBanner />
   </main>
 </template>
 
