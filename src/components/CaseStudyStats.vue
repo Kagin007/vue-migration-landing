@@ -42,7 +42,7 @@ const { count: sprintsCount, elementRef: sprintsRef } = useCountUp(2, 1200)
 
 .stats-bar {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 24px;
   padding: 32px 40px;
   background: var(--bg-card);
@@ -66,7 +66,7 @@ const { count: sprintsCount, elementRef: sprintsRef } = useCountUp(2, 1200)
 }
 
 .stat-value--text {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 
 .stat-label {
@@ -95,7 +95,7 @@ const { count: sprintsCount, elementRef: sprintsRef } = useCountUp(2, 1200)
   }
 
   .stat-value--text {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 }
 </style>
