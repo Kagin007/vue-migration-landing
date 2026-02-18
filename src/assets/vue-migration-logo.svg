@@ -10,12 +10,9 @@
     </linearGradient>
   </defs>
   
-  <!-- Background -->
-  <rect width="400" height="400" rx="44" fill="#1e293b"/>
-  
   <!-- Outer checkmark (slate) -->
   <path d="M160,310 L55,165 L115,165 L160,240 L285,65 L345,65 Z" fill="url(#darkGrad)"/>
-  
+
   <!-- Inner checkmark (green) -->
   <path d="M160,240 L110,160 L138,160 L160,198 L265,80 L293,80 Z" fill="url(#mainGrad)"/>
 </svg>
