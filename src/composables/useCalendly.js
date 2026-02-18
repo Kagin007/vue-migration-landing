@@ -22,7 +22,7 @@ function loadScript() {
   })
 }
 
-const CALENDLY_URL = 'https://calendly.com/placeholder/vue-migration-intro'
+const CALENDLY_URL = 'https://calendly.com/vue3migration'
 
 export function useCalendly() {
   async function openCalendly() {
