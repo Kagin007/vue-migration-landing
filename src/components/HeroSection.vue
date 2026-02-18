@@ -102,8 +102,8 @@ function scrollTo(id) {
 
 :global([data-theme='dark']) .hero-banner {
   background-image: url('/hero-banner.webp');
-  opacity: 0.4;
-  mix-blend-mode: lighten;
+  opacity: 0.5;
+  mix-blend-mode: screen;
 }
 
 .hero-grid {
