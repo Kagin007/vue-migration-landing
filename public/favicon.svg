@@ -5,24 +5,17 @@
       <stop offset="100%" style="stop-color:#3ba676;stop-opacity:1" />
     </linearGradient>
     <linearGradient id="darkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#35495e;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#2c3e50;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#3d5a80;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34506e;stop-opacity:1" />
     </linearGradient>
   </defs>
   
   <!-- Background -->
-  <rect width="400" height="400" rx="44" fill="#0f172a"/>
+  <rect width="400" height="400" rx="44" fill="#1e293b"/>
   
-  <!-- Outer V (dark slate - Vue 2 reference) -->
-  <path d="M200,280 L70,80 L130,80 L200,195 L270,80 L330,80 Z" fill="url(#darkGrad)"/>
+  <!-- Outer checkmark (slate) -->
+  <path d="M160,310 L55,165 L115,165 L160,240 L285,65 L345,65 Z" fill="url(#darkGrad)"/>
   
-  <!-- Inner V (green - Vue 3 reference) -->
-  <path d="M200,200 L145,105 L175,105 L200,148 L225,105 L255,105 Z" fill="url(#mainGrad)"/>
-  
-  <!-- Forward arrow overlaid (migration direction) -->
-  <rect x="155" y="222" width="70" height="4" rx="2" fill="#42b883" opacity="0.9"/>
-  <polygon points="220,213 245,224 220,235" fill="#42b883" opacity="0.9"/>
-  
-  <!-- Subtle ".dev" text -->
-  <text x="200" y="340" font-family="'SF Mono', 'Fira Code', 'Consolas', monospace" font-size="24" font-weight="500" fill="#42b883" text-anchor="middle" letter-spacing="4" opacity="0.7">vuemigration.dev</text>
+  <!-- Inner checkmark (green) -->
+  <path d="M160,240 L110,160 L138,160 L160,198 L265,80 L293,80 Z" fill="url(#mainGrad)"/>
 </svg>

@@ -8,7 +8,7 @@ function scrollTo(id) {
 const tiers = ref([
   {
     name: 'Migration Audit',
-    price: '$1,000 – $1,500',
+    price: '$1,500 – $2,500',
     unit: 'CAD, fixed fee',
     description: 'Understand exactly what your migration involves before committing to execution.',
     popular: false,
@@ -45,10 +45,15 @@ const tiers = ref([
   },
   {
     name: 'Full Migration',
-    price: '$5,000 – $50,000',
+    price: '$7,500 – $60,000',
     unit: 'CAD, project-based',
     description: 'End-to-end execution. I handle the migration from audit through production deployment so your team can stay focused on shipping features.',
     popular: true,
+    tiers: [
+      { label: 'Small', detail: '< 50 components', range: '$7,500 – $12,000' },
+      { label: 'Medium', detail: '50–150 components', range: '$15,000 – $30,000' },
+      { label: 'Large', detail: '150+ components', range: '$30,000 – $60,000' },
+    ],
     features: [
       'Everything in the Migration Audit',
       'Full hands-on-keyboard execution',
@@ -90,6 +95,16 @@ const tiers = ref([
             <span class="price-unit">{{ tier.unit }}</span>
           </div>
           <p class="tier-description">{{ tier.description }}</p>
+
+          <div v-if="tier.tiers" class="tier-breakdown">
+            <div v-for="t in tier.tiers" :key="t.label" class="tier-row">
+              <div class="tier-row-label">
+                <span class="tier-row-name">{{ t.label }}</span>
+                <span class="tier-row-detail">{{ t.detail }}</span>
+              </div>
+              <span class="tier-row-range mono">{{ t.range }}</span>
+            </div>
+          </div>
 
           <ul class="tier-features">
             <li v-for="feature in tier.features" :key="feature">
@@ -209,6 +224,48 @@ const tiers = ref([
   flex-shrink: 0;
   color: var(--accent);
   margin-top: 2px;
+}
+
+.tier-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding: 16px;
+  background: var(--bg-tertiary);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.tier-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.tier-row-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tier-row-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.tier-row-detail {
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+}
+
+.tier-row-range {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+  white-space: nowrap;
 }
 
 .pricing-note {

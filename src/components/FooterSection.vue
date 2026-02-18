@@ -32,7 +32,11 @@ function scrollTo(id) {
           <span class="footer-divider">|</span>
           <a href="https://www.linkedin.com/in/adam-schulte-a279ab10/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <span class="footer-divider">|</span>
-          <a href="https://github.com/Kagin007">GitHub</a>
+          <a href="https://www.linkedin.com/company/vue-migration-consulting/" target="_blank" rel="noopener noreferrer">Company Page</a>
+          <span class="footer-divider">|</span>
+          <a href="https://www.youtube.com/@vuemigration" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <span class="footer-divider">|</span>
+          <a href="https://github.com/Kagin007" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
 
         <div class="footer-meta">
