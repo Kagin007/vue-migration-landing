@@ -5,8 +5,8 @@
         <span class="section-label">// The Problem</span>
         <h2 id="problem-heading" class="section-title">Vue 2 End of Life: Why You Need<br>to <span class="text-gradient">Migrate Now</span></h2>
         <p class="section-subtitle">
-          Vue 2 has been unsupported for over two years — no security patches, no bug fixes, and no ecosystem updates.
-          Every month you wait increases your exposure.
+          No security patches. No bug fixes. No ecosystem updates.
+          Every month you wait increases your exposure and your migration cost.
         </p>
       </div>
 

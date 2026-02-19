@@ -39,20 +39,16 @@ function scrollTo(id) {
       <p class="hero-subtitle">
         Your Vue 2 app has an expiration date. I migrate production Vue 2 applications to Vue 3 using a structured,
         battle-tested methodology — faster and with less risk than traditional consultancies.
-        40 tickets. Two sprints. Proven on a 300+ file enterprise application.
       </p>
 
       <div class="hero-actions">
         <a href="#contact" class="btn btn-primary btn-lg" @click.prevent="scrollTo('contact')">
-          Get in Touch
-        </a>
-        <a href="#contact" class="btn btn-secondary btn-lg" @click.prevent="scrollTo('contact')">
           Start with a Codebase Audit
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
           </svg>
         </a>
-        <button class="btn btn-ghost btn-lg" @click="openCalendly">Book a Free Call</button>
+        <button class="btn btn-secondary btn-lg" @click="openCalendly">Book a Free Call</button>
       </div>
 
       <div class="hero-proof">

@@ -2,7 +2,6 @@
 import { useHead } from '@unhead/vue'
 import HeroSection from '../components/HeroSection.vue'
 import VideoEmbed from '../components/VideoEmbed.vue'
-import CaseStudyStats from '../components/CaseStudyStats.vue'
 import ProblemSection from '../components/ProblemSection.vue'
 import ApproachSection from '../components/ApproachSection.vue'
 import AssessmentSection from '../components/AssessmentSection.vue'
@@ -159,13 +158,12 @@ useHead({
   <main>
     <HeroSection />
     <VideoEmbed />
-    <CaseStudyStats />
     <ProblemSection />
     <ApproachSection />
-    <AssessmentSection />
-    <PricingSection />
     <CredibilitySection />
     <TestimonialSection />
+    <AssessmentSection />
+    <PricingSection />
     <BlogSection />
     <FaqSection />
     <ContactSection />
