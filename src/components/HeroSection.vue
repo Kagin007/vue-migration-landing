@@ -261,6 +261,11 @@ function scrollTo(id) {
 }
 
 @media (max-width: 640px) {
+  .hero-glow {
+    width: 360px;
+    height: 360px;
+  }
+
   .hero-content {
     padding: 48px 24px;
   }
