@@ -5,7 +5,7 @@ function scrollTo(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 }
 
-const technologies = ['Vue 3', 'Vite', 'Pinia', 'Vuetify 3', 'TypeScript', 'Nuxt 3', 'Composition API']
+
 </script>
 
 <template>
@@ -103,9 +103,6 @@ const technologies = ['Vue 3', 'Vite', 'Pinia', 'Vuetify 3', 'TypeScript', 'Nuxt
         </div>
       </div>
 
-      <div class="technologies-strip">
-        <span v-for="tech in technologies" :key="tech" class="tech-badge">{{ tech }}</span>
-      </div>
     </div>
   </section>
 </template>
@@ -200,23 +197,6 @@ const technologies = ['Vue 3', 'Vite', 'Pinia', 'Vuetify 3', 'TypeScript', 'Nuxt
   font-weight: 600;
 }
 
-.technologies-strip {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 24px;
-}
-
-.tech-badge {
-  padding: 6px 14px;
-  background: var(--accent-subtle);
-  border: 1px solid var(--accent-border);
-  border-radius: 100px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--accent);
-}
 
 @media (max-width: 768px) {
   .stack-items {

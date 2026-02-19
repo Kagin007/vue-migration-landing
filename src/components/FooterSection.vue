@@ -1,5 +1,6 @@
 <script setup>
 import { useRouter, useRoute } from 'vue-router'
+import logo from '../assets/vue-migration-logo.svg'
 
 const router = useRouter()
 const route = useRoute()
@@ -18,21 +19,8 @@ function scrollTo(id) {
     <div class="container">
       <div class="footer-bottom">
         <div class="footer-brand">
-          <svg class="footer-logo" viewBox="0 0 400 400" width="24" height="24" aria-hidden="true">
-            <defs>
-              <linearGradient id="footerMainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#42b883" />
-                <stop offset="100%" style="stop-color:#3ba676" />
-              </linearGradient>
-              <linearGradient id="footerDarkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#3d5a80" />
-                <stop offset="100%" style="stop-color:#34506e" />
-              </linearGradient>
-            </defs>
-            <path d="M160,310 L55,165 L115,165 L160,240 L285,65 L345,65 Z" fill="url(#footerDarkGrad)"/>
-            <path d="M160,240 L110,160 L138,160 L160,198 L265,80 L293,80 Z" fill="url(#footerMainGrad)"/>
-          </svg>
-          <span>Vue Migration Consulting</span>
+          <img :src="logo" alt="Vue Migration Consulting" class="footer-logo" />
+          <span>Vue Migration<span class="brand-dot">.</span></span>
         </div>
 
         <div class="footer-links">
@@ -73,9 +61,19 @@ function scrollTo(id) {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-weight: 700;
+  font-size: 1.1rem;
   color: var(--text-primary);
+}
+
+.footer-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+}
+
+.brand-dot {
+  color: var(--accent);
 }
 
 .footer-links {
