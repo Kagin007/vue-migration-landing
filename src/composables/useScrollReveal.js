@@ -2,7 +2,6 @@ import { onMounted, onUnmounted } from 'vue'
 
 export function useScrollReveal() {
   let observer = null
-  let mutationObserver = null
 
   onMounted(() => {
     observer = new IntersectionObserver(
@@ -25,14 +24,9 @@ export function useScrollReveal() {
 
     // Initial pass after a short delay to ensure all components are mounted
     setTimeout(observeAll, 100)
-
-    // Watch for dynamically added .reveal elements
-    mutationObserver = new MutationObserver(observeAll)
-    mutationObserver.observe(document.body, { childList: true, subtree: true })
   })
 
   onUnmounted(() => {
     observer?.disconnect()
-    mutationObserver?.disconnect()
   })
 }

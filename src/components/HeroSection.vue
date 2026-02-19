@@ -2,18 +2,16 @@
 import { ref, onMounted } from 'vue'
 import { useCalendly } from '../composables/useCalendly'
 import { useDarkMode } from '../composables/useDarkMode'
+import { useScrollTo } from '../composables/useScrollTo'
 
 const { openCalendly } = useCalendly()
 const { isDark } = useDarkMode()
+const { scrollTo } = useScrollTo()
 
 const loaded = ref(false)
 onMounted(() => {
   requestAnimationFrame(() => { loaded.value = true })
 })
-
-function scrollTo(id) {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-}
 </script>
 
 <template>

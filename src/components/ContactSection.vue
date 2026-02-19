@@ -67,6 +67,7 @@ async function handleSubmit() {
           <p>
             Prefer to talk? Book a free 15-minute intro call and I'll give you an honest assessment of your migration.
           </p>
+          <p class="cta-hint">Best if you want to discuss your project live.</p>
           <button class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;" @click="openCalendly">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
@@ -83,6 +84,7 @@ async function handleSubmit() {
             </svg>
           </div>
           <h3>Send a Message</h3>
+          <p class="cta-hint">Best if you want to share project details upfront.</p>
 
           <div v-if="status === 'success'" class="form-success">
             <div class="success-icon">
@@ -220,6 +222,13 @@ async function handleSubmit() {
   font-size: 0.95rem;
   margin-bottom: 24px;
   line-height: 1.7;
+}
+
+.cta-hint {
+  font-size: 0.82rem;
+  color: var(--text-tertiary);
+  font-style: italic;
+  margin-bottom: 8px;
 }
 
 .contact-form {

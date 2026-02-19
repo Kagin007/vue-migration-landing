@@ -1,11 +1,8 @@
 <script setup>
 import profilePic from '../assets/adam_profile_pic.jpeg'
+import { useScrollTo } from '../composables/useScrollTo'
 
-function scrollTo(id) {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-}
-
-
+const { scrollTo } = useScrollTo()
 </script>
 
 <template>

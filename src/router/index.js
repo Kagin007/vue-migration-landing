@@ -35,6 +35,10 @@ const routes = [
     path: '/blog/vuex-to-pinia-migration',
     component: () => import('../pages/blog/VuexToPinia.vue'),
   },
+  {
+    path: '/:pathMatch(.*)*',
+    component: () => import('../pages/NotFoundPage.vue'),
+  },
 ]
 
 export { routes }

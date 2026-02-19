@@ -1,17 +1,8 @@
 <script setup>
-import { useRouter, useRoute } from 'vue-router'
 import logo from '../assets/vue-migration-logo.svg'
+import { useScrollTo } from '../composables/useScrollTo'
 
-const router = useRouter()
-const route = useRoute()
-
-function scrollTo(id) {
-  if (route.path === '/') {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-  } else {
-    router.push({ path: '/', hash: `#${id}` })
-  }
-}
+const { scrollTo } = useScrollTo()
 </script>
 
 <template>

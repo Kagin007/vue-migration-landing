@@ -2,13 +2,13 @@
 import { useScrollProgress } from '../composables/useScrollProgress'
 import { useCalendly } from '../composables/useCalendly'
 
-const { pastHero } = useScrollProgress()
+const { pastHero, atContact } = useScrollProgress()
 const { openCalendly } = useCalendly()
 </script>
 
 <template>
   <Transition name="sticky-cta">
-    <div v-if="pastHero" class="sticky-mobile-cta">
+    <div v-if="pastHero && !atContact" class="sticky-mobile-cta">
       <button class="btn btn-primary sticky-cta-btn" @click="openCalendly">
         Book a Free Call
       </button>

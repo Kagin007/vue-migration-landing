@@ -20,4 +20,10 @@ import StickyMobileCTA from './components/StickyMobileCTA.vue'
   padding: 0;
   text-align: left;
 }
+
+@media (max-width: 900px) {
+  #app {
+    padding-bottom: 56px;
+  }
+}
 </style>

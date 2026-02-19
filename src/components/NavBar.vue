@@ -1,15 +1,16 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
+import { useRoute } from 'vue-router'
 import logo from '../assets/vue-migration-logo.svg'
 import { useDarkMode } from '../composables/useDarkMode'
 import { useActiveSection } from '../composables/useActiveSection'
+import { useScrollTo } from '../composables/useScrollTo'
 
-const router = useRouter()
 const route = useRoute()
 
 const { isDark, toggle: toggleTheme } = useDarkMode()
 const { activeSection } = useActiveSection(['hero', 'problem', 'approach', 'assessment', 'pricing', 'credibility', 'faq'])
+const { scrollTo: baseScrollTo } = useScrollTo()
 
 const scrolled = ref(false)
 const mobileOpen = ref(false)
@@ -29,11 +30,7 @@ function handleScroll() {
 
 function scrollTo(id) {
   mobileOpen.value = false
-  if (route.path === '/') {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-  } else {
-    router.push({ path: '/', hash: `#${id}` })
-  }
+  baseScrollTo(id)
 }
 
 onMounted(() => window.addEventListener('scroll', handleScroll, { passive: true }))

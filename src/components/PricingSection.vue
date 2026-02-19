@@ -1,9 +1,8 @@
 <script setup>
 import { ref } from 'vue'
+import { useScrollTo } from '../composables/useScrollTo'
 
-function scrollTo(id) {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-}
+const { scrollTo } = useScrollTo()
 
 const tiers = ref([
   {
