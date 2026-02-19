@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: 'What does Vue 2 end of life mean for my application?',
-    a: 'Vue 2 has been end-of-life since December 31, 2023 — no more security patches, bug fixes, or ecosystem updates. The longer you wait, the harder it gets. A migration audit gives you a clear picture of the effort involved so you can plan with confidence.',
+    a: 'Vue 2 has been end-of-life for over two years — no more security patches, bug fixes, or ecosystem updates. The longer you wait, the harder it gets. A migration audit gives you a clear picture of the effort involved so you can plan with confidence.',
   },
   {
     q: 'Do you handle Nuxt 2 to Nuxt 3 migrations?',
