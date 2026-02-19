@@ -28,7 +28,7 @@ function scrollTo(id) {
     <div class="container hero-content" :class="{ loaded }">
       <div class="hero-badge">
         <span class="badge-dot"></span>
-        <span class="mono">Vue 2 End of Life — December 31, 2023</span>
+        <span class="mono">Vue 2 has been unsupported for over 2 years</span>
       </div>
 
       <h1 class="hero-title">
