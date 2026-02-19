@@ -1,5 +1,5 @@
 <template>
-  <section class="section testimonial-section" aria-label="Testimonial">
+  <section class="section testimonial-section section-divider" aria-label="Testimonial">
     <div class="container">
       <div class="testimonial-card reveal">
         <div class="quote-icon" aria-hidden="true">
