@@ -287,13 +287,28 @@ const tiers = ref([
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 480px) {
   .pricing-grid {
     max-width: 100%;
   }
 
   .pricing-card {
-    padding: 24px 20px;
+    padding: 28px 20px;
+  }
+
+  .price-value {
+    font-size: 1.25rem;
+    word-break: break-word;
+  }
+
+  .tier-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .tier-row-range {
+    white-space: normal;
   }
 }
 </style>
