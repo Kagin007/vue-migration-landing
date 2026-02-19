@@ -87,6 +87,9 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
       </div>
     </div>
   </header>
+  <Transition name="overlay">
+    <div v-if="mobileOpen" class="mobile-overlay" @click="mobileOpen = false" />
+  </Transition>
 </template>
 
 <style scoped>
@@ -272,5 +275,29 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   .mobile-toggle {
     display: flex;
   }
+}
+
+.mobile-overlay {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .mobile-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
+
+.overlay-enter-active,
+.overlay-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.overlay-enter-from,
+.overlay-leave-to {
+  opacity: 0;
 }
 </style>
