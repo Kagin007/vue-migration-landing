@@ -5,7 +5,7 @@
         <span class="section-label">// The Problem</span>
         <h2 id="problem-heading" class="section-title">Vue 2 End of Life: Why You Need<br>to <span class="text-gradient">Migrate Now</span></h2>
         <p class="section-subtitle">
-          Since December 31, 2023, Vue 2 receives no security patches, no bug fixes, and no ecosystem updates.
+          Vue 2 has been unsupported for over two years — no security patches, no bug fixes, and no ecosystem updates.
           Every month you wait increases your exposure.
         </p>
       </div>
@@ -64,7 +64,7 @@
         <p>
           <strong>The cost of migration only goes up.</strong>
           Every sprint you build on Vue 2 adds more code to migrate later.
-          The best time to start was January 2024. The second best time is now.
+          The best time to start was two years ago. The second best time is now.
         </p>
       </div>
     </div>
