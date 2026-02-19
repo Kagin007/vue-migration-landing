@@ -1,14 +1,19 @@
 <script setup>
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 import { useScrollProgress } from '../composables/useScrollProgress'
 import { useCalendly } from '../composables/useCalendly'
 
+const route = useRoute()
 const { pastHero, atContact } = useScrollProgress()
 const { openCalendly } = useCalendly()
+
+const visible = computed(() => route.path === '/' && pastHero.value && !atContact.value)
 </script>
 
 <template>
   <Transition name="sticky-cta">
-    <div v-if="pastHero && !atContact" class="sticky-mobile-cta">
+    <div v-if="visible" class="sticky-mobile-cta">
       <button class="btn btn-primary sticky-cta-btn" @click="openCalendly">
         Book a Free Call
       </button>

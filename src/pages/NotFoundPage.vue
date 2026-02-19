@@ -10,8 +10,8 @@ useHead({
   <main class="not-found">
     <div class="container not-found-content">
       <span class="error-code mono">404</span>
-      <h1>Page not found</h1>
-      <p>The page you're looking for doesn't exist or has been moved.</p>
+      <h1>This page has already been migrated.</h1>
+      <p>Looks like what you're looking for doesn't exist — or it's been moved to Vue 3.</p>
       <router-link to="/" class="btn btn-primary">Back to Home</router-link>
     </div>
   </main>
