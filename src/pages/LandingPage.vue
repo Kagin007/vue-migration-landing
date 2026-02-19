@@ -11,6 +11,7 @@ import TestimonialSection from '../components/TestimonialSection.vue'
 import BlogSection from '../components/BlogSection.vue'
 import FaqSection from '../components/FaqSection.vue'
 import ContactSection from '../components/ContactSection.vue'
+import CodeMigrationDemo from '../components/CodeMigrationDemo.vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
 
 useScrollReveal()
@@ -157,6 +158,11 @@ useHead({
 <template>
   <main>
     <HeroSection />
+    <section class="code-demo-section">
+      <div class="container">
+        <CodeMigrationDemo />
+      </div>
+    </section>
     <VideoEmbed />
     <ProblemSection />
     <ApproachSection />
@@ -169,3 +175,10 @@ useHead({
     <ContactSection />
   </main>
 </template>
+
+<style scoped>
+.code-demo-section {
+  padding: 60px 0;
+  background: var(--bg-tertiary);
+}
+</style>

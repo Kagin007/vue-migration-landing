@@ -3,9 +3,11 @@ import NavBar from './components/NavBar.vue'
 import FooterSection from './components/FooterSection.vue'
 import ScrollToTop from './components/ScrollToTop.vue'
 import StickyMobileCTA from './components/StickyMobileCTA.vue'
+import MigrationProgressBar from './components/MigrationProgressBar.vue'
 </script>
 
 <template>
+  <MigrationProgressBar />
   <NavBar />
   <router-view />
   <FooterSection />
