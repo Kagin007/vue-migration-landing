@@ -9,7 +9,7 @@ import { useScrollTo } from '../composables/useScrollTo'
 const route = useRoute()
 
 const { isDark, toggle: toggleTheme } = useDarkMode()
-const { activeSection } = useActiveSection(['hero', 'problem', 'approach', 'assessment', 'pricing', 'credibility', 'faq'])
+const { activeSection } = useActiveSection(['hero', 'problem', 'approach', 'credibility', 'assessment', 'pricing', 'faq'])
 const { scrollTo: baseScrollTo } = useScrollTo()
 
 const scrolled = ref(false)
@@ -18,9 +18,9 @@ const mobileOpen = ref(false)
 const navLinks = [
   { id: 'problem', label: 'Why Now' },
   { id: 'approach', label: 'Approach' },
+  { id: 'credibility', label: 'About' },
   { id: 'assessment', label: 'Assessment' },
   { id: 'pricing', label: 'Pricing' },
-  { id: 'credibility', label: 'About' },
   { id: 'faq', label: 'FAQ' },
 ]
 
