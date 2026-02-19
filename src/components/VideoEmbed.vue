@@ -50,6 +50,7 @@ function play() {
 <style scoped>
 .video-section {
   padding: 60px 0;
+  background: var(--bg-tertiary);
 }
 
 .video-wrapper {
@@ -103,6 +104,16 @@ function play() {
 .video-facade:hover .video-play-btn {
   transform: scale(1.1);
   background: rgba(66, 184, 131, 0.9);
+}
+
+.video-player::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  box-shadow: inset 0 0 60px 20px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .video-player iframe {
