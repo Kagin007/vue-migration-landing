@@ -26,10 +26,6 @@
 </template>
 
 <style scoped>
-.testimonial-section {
-  padding-top: 0;
-}
-
 .testimonial-card {
   max-width: 720px;
   margin: 0 auto;

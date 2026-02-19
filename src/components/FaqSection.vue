@@ -1,8 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-import { useCalendly } from '../composables/useCalendly'
-
-const { openCalendly } = useCalendly()
 
 const faqs = [
   {
@@ -27,7 +24,7 @@ const faqs = [
   },
   {
     q: 'What does Vue 2 end of life mean for my application?',
-    a: 'Vue 2 reached end of life on December 31, 2023, which means it no longer receives security patches, bug fixes, or ecosystem updates. Your application is exposed to unpatched vulnerabilities and increasingly incompatible dependencies. Migrating to Vue 3 restores active support, unlocks modern tooling like Vite and Pinia, and future-proofs your codebase.',
+    a: 'Vue 2 has been end-of-life since December 31, 2023 — no more security patches, bug fixes, or ecosystem updates. The longer you wait, the harder it gets. A migration audit gives you a clear picture of the effort involved so you can plan with confidence.',
   },
   {
     q: 'Do you handle Nuxt 2 to Nuxt 3 migrations?',
@@ -71,15 +68,6 @@ function toggle(i) {
         </div>
       </div>
 
-      <div class="faq-cta reveal">
-        <p>Still have questions? Let's talk.</p>
-        <button class="btn btn-primary" @click="openCalendly">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
-          </svg>
-          Book a Free Call
-        </button>
-      </div>
     </div>
   </section>
 </template>
@@ -155,22 +143,5 @@ function toggle(i) {
   line-height: 1.75;
 }
 
-.faq-cta {
-  text-align: center;
-  margin-top: 40px;
-  padding: 32px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
-.faq-cta p {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 16px;
-}
 </style>

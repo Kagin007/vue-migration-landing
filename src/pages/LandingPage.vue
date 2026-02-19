@@ -137,7 +137,7 @@ useHead({
             "name": "What does Vue 2 end of life mean for my application?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Vue 2 reached end of life on December 31, 2023, which means it no longer receives security patches, bug fixes, or ecosystem updates. Your application is exposed to unpatched vulnerabilities and increasingly incompatible dependencies. Migrating to Vue 3 restores active support, unlocks modern tooling like Vite and Pinia, and future-proofs your codebase."
+              "text": "Vue 2 has been end-of-life since December 31, 2023 — no more security patches, bug fixes, or ecosystem updates. The longer you wait, the harder it gets. A migration audit gives you a clear picture of the effort involved so you can plan with confidence."
             }
           },
           {
@@ -160,12 +160,12 @@ useHead({
     <HeroSection />
     <VideoEmbed />
     <CaseStudyStats />
-    <TestimonialSection />
     <ProblemSection />
     <ApproachSection />
     <AssessmentSection />
     <PricingSection />
     <CredibilitySection />
+    <TestimonialSection />
     <BlogSection />
     <FaqSection />
     <ContactSection />

@@ -29,23 +29,6 @@
           </div>
         </div>
       </div>
-
-      <div class="approach-highlight reveal">
-        <div class="highlight-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-          </svg>
-        </div>
-        <div>
-          <h3>Speed Without Shortcuts</h3>
-          <p>
-            Deep Vue expertise combined with a refined, repeatable process means I deliver migrations
-            at a pace that traditional consultancies can't match — without sacrificing code quality
-            or test coverage. The same methodology that completed a full 300+ file enterprise migration
-            in two sprints.
-          </p>
-        </div>
-      </div>
     </div>
   </section>
 </template>
@@ -204,39 +187,6 @@ const steps = [
   opacity: 0.6;
 }
 
-.approach-highlight {
-  display: flex;
-  gap: 20px;
-  padding: 32px;
-  background: var(--bg-secondary);
-  border: 1px solid var(--accent-border);
-  border-radius: 16px;
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.highlight-icon {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: var(--accent-subtle);
-  color: var(--accent);
-}
-
-.approach-highlight h3 {
-  margin-bottom: 8px;
-  font-size: 1.1rem;
-}
-
-.approach-highlight p {
-  font-size: 0.93rem;
-  line-height: 1.7;
-}
-
 @media (max-width: 640px) {
   .timeline-line {
     left: 20px;
@@ -251,9 +201,6 @@ const steps = [
     gap: 16px;
   }
 
-  .approach-highlight {
-    flex-direction: column;
-  }
 }
 
 @media (max-width: 375px) {
@@ -275,8 +222,5 @@ const steps = [
     padding-bottom: 28px;
   }
 
-  .approach-highlight {
-    padding: 20px;
-  }
 }
 </style>

@@ -168,7 +168,7 @@ async function handleSubmit() {
               </button>
 
               <p v-if="status === 'error'" class="form-error">
-                Something went wrong. Please try again or email me directly.
+                Something went wrong. Please try again or <a href="https://www.linkedin.com/in/adam-schulte-a279ab10/" target="_blank">reach out on LinkedIn</a>.
               </p>
             </div>
           </form>
@@ -328,6 +328,11 @@ async function handleSubmit() {
 .form-error {
   font-size: 0.87rem;
   color: #ef4444;
+}
+
+.form-error a {
+  color: var(--accent);
+  text-decoration: underline;
 }
 
 .form-success {
